@@ -13,7 +13,7 @@ let kChooseTitle = "Choose one of the following keyboards"
 class KeyboardSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @objc var tableView = UITableView()
     fileprivate var _keyboardDefinitions : [String] = []
-    fileprivate var _langCode = "EN"
+    fileprivate var _langCode = "HappyKey"
 
     required init()
     {

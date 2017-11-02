@@ -27,7 +27,6 @@
 		4EC2A47019DF811E00F789E1 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2A46C19DF811E00F789E1 /* ForwardingView.swift */; };
 		4EE7599B19F75A0D00B4E6ED /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7599A19F75A0D00B4E6ED /* Utilities.swift */; };
 		4EEFD78B19E0DF15004D4974 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEFD78A19E0DF15004D4974 /* Shapes.swift */; };
-		4EF16F9119D254E00076AFCB /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4EF16F9019D254E00076AFCB /* Background.jpg */; };
 		4EF16F9619D255030076AFCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF16F9319D255030076AFCB /* Images.xcassets */; };
 		4EF16F9819D255030076AFCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF16F9519D255030076AFCB /* ViewController.swift */; };
 		4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */; };
@@ -54,6 +53,8 @@
 		82FD1A8A1B0B31A300A6D23D /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A891B0B31A300A6D23D /* TurtleBezierPath.m */; };
 		82FD1A911B0B3C8D00A6D23D /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A901B0B3C8D00A6D23D /* DefaultKeyboard.swift */; };
 		82FD1A931B0B3D3800A6D23D /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */; };
+		FA9FA9821FABC6400075219B /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA9FA9811FABC6400075219B /* Background.jpg */; };
+		FA9FA9841FABC7700075219B /* Smile.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9FA9831FABC7700075219B /* Smile.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,7 +149,6 @@
 		4EC2A46C19DF811E00F789E1 /* ForwardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
 		4EE7599A19F75A0D00B4E6ED /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4EEFD78A19E0DF15004D4974 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
-		4EF16F9019D254E00076AFCB /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		4EF16F9219D254EA0076AFCB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EF16F9319D255030076AFCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4EF16F9519D255030076AFCB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +179,8 @@
 		82FD1A8C1B0B31F900A6D23D /* Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
 		82FD1A901B0B3C8D00A6D23D /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
 		82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
+		FA9FA9811FABC6400075219B /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
+		FA9FA9831FABC7700075219B /* Smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +316,8 @@
 		4E807D9619461D9000D875D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4EF16F9019D254E00076AFCB /* Background.jpg */,
+				FA9FA9831FABC7700075219B /* Smile.png */,
+				FA9FA9811FABC6400075219B /* Background.jpg */,
 				4EF16F9219D254EA0076AFCB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -583,7 +586,8 @@
 			files = (
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
 				4EF16F9F19D2552E0076AFCB /* Main.storyboard in Resources */,
-				4EF16F9119D254E00076AFCB /* Background.jpg in Resources */,
+				FA9FA9841FABC7700075219B /* Smile.png in Resources */,
+				FA9FA9821FABC6400075219B /* Background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

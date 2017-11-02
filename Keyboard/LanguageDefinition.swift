@@ -82,7 +82,7 @@ open class LanguageDefinition {
     // e.g. failing to load language definitions from the JSON language definition file.
     class fileprivate func EnglishLanguageDefinition() -> LanguageDefinition {
         return LanguageDefinition(
-            langCode: "EN",
+            langCode: "HappyKey",
             englishName: "English",
             nativeName: "English",
             defaultKbd: "QWERTY",
@@ -160,7 +160,7 @@ func EnabledLanguageCodes() -> [String]
 
     // Make sure at least one language is always enabled
     if enabledCodes.count == 0 {
-        enabledCodes.append("EN")
+        enabledCodes.append("HappyKey")
     }
 
     return enabledCodes
@@ -216,7 +216,7 @@ open class LanguageDefinitions {
     fileprivate func makeDefaultLangDefinitions()
     {
         definitions = [LanguageDefinition.EnglishLanguageDefinition()]
-        langCodeToDefinition["EN"] = definitions[0]
+        langCodeToDefinition["HappyKey"] = definitions[0]
     }
 
     init(jsonFileName : String)

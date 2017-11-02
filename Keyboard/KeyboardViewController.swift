@@ -29,7 +29,7 @@ let kKeyboardClicks = "kKeyboardClicks"
 let kSmallLowercase = "kSmallLowercase"
 let kActiveLanguageCode = "kActiveLanguageCode"
 
-let vEnglishLanguageCode = "EN"
+let vEnglishLanguageCode = "HappyKey"
 let vQwertyKeyboardFileName = "QWERTY"
 
 class KeyboardViewController: UIInputViewController {

@@ -26,7 +26,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
     {
         self.init()
 
-        self._navController = navController
+        self._navController = nil
 
         self._languageDefinitions = languageDefinitions
         if self._languageDefinitions != nil {
@@ -378,7 +378,7 @@ class LanguageSettingsCell : DefaultSettingsTableViewCell
     @objc var kbdChanger: UITextView
     @objc var kbdName: UITextView
     @objc var parentViewController: LanguageSettingsViewController? = nil
-    @objc var langCode : String = "EN"
+    @objc var langCode : String = "HappyKey"
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.kbdName = MakeUITextView()
