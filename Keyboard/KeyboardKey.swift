@@ -30,7 +30,7 @@ class KeyboardKey: UIControl {
     
     var vibrancy: VibrancyType?
     
-    var text: String {
+    @objc var text: String {
         didSet {
             self.label.text = text
             self.label.frame = CGRect(x: self.labelInset, y: self.labelInset, width: self.bounds.width - self.labelInset * 2, height: self.bounds.height - self.labelInset * 2)
@@ -38,22 +38,22 @@ class KeyboardKey: UIControl {
         }
     }
     
-    var color: UIColor { didSet { updateColors() }}
-    var underColor: UIColor { didSet { updateColors() }}
-    var borderColor: UIColor { didSet { updateColors() }}
-    var popupColor: UIColor { didSet { updateColors() }}
-    var drawUnder: Bool { didSet { updateColors() }}
-    var drawOver: Bool { didSet { updateColors() }}
-    var drawBorder: Bool { didSet { updateColors() }}
-    var underOffset: CGFloat { didSet { updateColors() }}
+    @objc var color: UIColor { didSet { updateColors() }}
+    @objc var underColor: UIColor { didSet { updateColors() }}
+    @objc var borderColor: UIColor { didSet { updateColors() }}
+    @objc var popupColor: UIColor { didSet { updateColors() }}
+    @objc var drawUnder: Bool { didSet { updateColors() }}
+    @objc var drawOver: Bool { didSet { updateColors() }}
+    @objc var drawBorder: Bool { didSet { updateColors() }}
+    @objc var underOffset: CGFloat { didSet { updateColors() }}
     
-    var textColor: UIColor { didSet { updateColors() }}
-    var downColor: UIColor? { didSet { updateColors() }}
-    var downUnderColor: UIColor? { didSet { updateColors() }}
-    var downBorderColor: UIColor? { didSet { updateColors() }}
-    var downTextColor: UIColor? { didSet { updateColors() }}
+    @objc var textColor: UIColor { didSet { updateColors() }}
+    @objc var downColor: UIColor? { didSet { updateColors() }}
+    @objc var downUnderColor: UIColor? { didSet { updateColors() }}
+    @objc var downBorderColor: UIColor? { didSet { updateColors() }}
+    @objc var downTextColor: UIColor? { didSet { updateColors() }}
     
-    var labelInset: CGFloat = 0 {
+    @objc var labelInset: CGFloat = 0 {
         didSet {
             if oldValue != labelInset {
                 self.label.frame = CGRect(x: self.labelInset, y: self.labelInset, width: self.bounds.width - self.labelInset * 2, height: self.bounds.height - self.labelInset * 2)
@@ -61,7 +61,7 @@ class KeyboardKey: UIControl {
         }
     }
     
-    var shouldRasterize: Bool = false {
+    @objc var shouldRasterize: Bool = false {
         didSet {
             for view in [self.displayView, self.borderView, self.underView] {
                 view?.layer.shouldRasterize = shouldRasterize
@@ -90,9 +90,9 @@ class KeyboardKey: UIControl {
         }
     }
     
-    var label: UILabel
-    var popupLabel: UILabel?
-    var shape: Shape? {
+    @objc var label: UILabel
+    @objc var popupLabel: UILabel?
+    @objc var shape: Shape? {
         didSet {
             if oldValue != nil && shape == nil {
                 oldValue?.removeFromSuperview()
@@ -102,16 +102,16 @@ class KeyboardKey: UIControl {
         }
     }
     
-    var background: KeyboardKeyBackground
-    var popup: KeyboardKeyBackground?
-    var connector: KeyboardConnector?
+    @objc var background: KeyboardKeyBackground
+    @objc var popup: KeyboardKeyBackground?
+    @objc var connector: KeyboardConnector?
     
-    var displayView: ShapeView
-    var borderView: ShapeView?
-    var underView: ShapeView?
+    @objc var displayView: ShapeView
+    @objc var borderView: ShapeView?
+    @objc var underView: ShapeView?
     
-    var shadowView: UIView
-    var shadowLayer: CALayer
+    @objc var shadowView: UIView
+    @objc var shadowLayer: CALayer
     
     init(vibrancy optionalVibrancy: VibrancyType?) {
         self.vibrancy = optionalVibrancy
@@ -220,14 +220,14 @@ class KeyboardKey: UIControl {
         self.refreshViews()
     }
     
-    func refreshViews() {
+    @objc func refreshViews() {
         self.refreshShapes()
         self.redrawText()
         self.redrawShape()
         self.updateColors()
     }
     
-    func refreshShapes() {
+    @objc func refreshShapes() {
         // TODO: dunno why this is necessary
         self.background.setNeedsLayout()
         
@@ -288,7 +288,7 @@ class KeyboardKey: UIControl {
         CATransaction.commit()
     }
     
-    func layoutPopupIfNeeded() {
+    @objc func layoutPopupIfNeeded() {
         if self.popup != nil && self.popupDirection == nil {
             self.shadowView.isHidden = false
             self.borderView?.isHidden = false
@@ -306,10 +306,10 @@ class KeyboardKey: UIControl {
         }
     }
     
-    func redrawText() {
+    @objc func redrawText() {
     }
     
-    func redrawShape() {
+    @objc func redrawShape() {
         if let shape = self.shape {
             self.text = ""
             shape.removeFromSuperview()
@@ -327,7 +327,7 @@ class KeyboardKey: UIControl {
         }
     }
     
-    func updateColors() {
+    @objc func updateColors() {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -392,7 +392,7 @@ class KeyboardKey: UIControl {
         
     }
     
-    func showPopup() {
+    @objc func showPopup() {
         if self.popup == nil {
             self.layer.zPosition = 1000
             
@@ -417,7 +417,7 @@ class KeyboardKey: UIControl {
         }
     }
     
-    func hidePopup() {
+    @objc func hidePopup() {
         if self.popup != nil {
             self.delegate?.willHidePopup(self)
             
@@ -452,13 +452,13 @@ class KeyboardKey: UIControl {
 
 class ShapeView: UIView {
     
-    var shapeLayer: CAShapeLayer?
+    @objc var shapeLayer: CAShapeLayer?
 
   override class var layerClass: AnyClass {
         return CAShapeLayer.self
     }
     
-    var curve: UIBezierPath? {
+    @objc var curve: UIBezierPath? {
         didSet {
             if let layer = self.shapeLayer {
                 layer.path = curve?.cgPath
@@ -469,7 +469,7 @@ class ShapeView: UIView {
         }
     }
     
-    var fillColor: UIColor? {
+    @objc var fillColor: UIColor? {
         didSet {
             if let layer = self.shapeLayer {
                 layer.fillColor = fillColor?.cgColor
@@ -480,7 +480,7 @@ class ShapeView: UIView {
         }
     }
 
-    var strokeColor: UIColor? {
+    @objc var strokeColor: UIColor? {
         didSet {
             if let layer = self.shapeLayer {
                 layer.strokeColor = strokeColor?.cgColor
@@ -522,7 +522,7 @@ class ShapeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func drawCall(_ rect:CGRect) {
+    @objc func drawCall(_ rect:CGRect) {
         if self.shapeLayer == nil {
             if let curve = self.curve {
                 if let lineWidth = self.lineWidth {

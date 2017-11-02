@@ -18,8 +18,8 @@ protocol Connectable: class {
 // <ConnectableView: UIView where ConnectableView: Connectable>
 class KeyboardConnector: KeyboardKeyBackground {
 
-    var start: UIView
-    var end: UIView
+    @objc var start: UIView
+    @objc var end: UIView
     var startDir: Direction
     var endDir: Direction
 
@@ -28,7 +28,7 @@ class KeyboardConnector: KeyboardKeyBackground {
     var convertedStartPoints: (CGPoint, CGPoint)!
     var convertedEndPoints: (CGPoint, CGPoint)!
     
-    var offset: CGPoint
+    @objc var offset: CGPoint
     
     // TODO: until bug is fixed, make sure start/end and startConnectable/endConnectable are the same object
     init(cornerRadius: CGFloat, underOffset: CGFloat, start s: UIView, end e: UIView, startConnectable sC: Connectable, endConnectable eC: Connectable, startDirection: Direction, endDirection: Direction) {
@@ -58,7 +58,7 @@ class KeyboardConnector: KeyboardKeyBackground {
         super.layoutSubviews()
     }
 
-    func generateConvertedPoints() {
+    @objc func generateConvertedPoints() {
         if self.startConnectable == nil || self.endConnectable == nil {
             return
         }
@@ -76,7 +76,7 @@ class KeyboardConnector: KeyboardKeyBackground {
         }
     }
 
-    func resizeFrame() {
+    @objc func resizeFrame() {
         generateConvertedPoints()
 
         let buffer: CGFloat = 32

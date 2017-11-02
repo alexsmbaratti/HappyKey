@@ -11,15 +11,15 @@ let LongPressActivated = 888
 
 class ForwardingView: UIView, UIGestureRecognizerDelegate {
     
-    var touchToView: [UITouch:UIView]
+    @objc var touchToView: [UITouch:UIView]
 	
-	var isLongPressEnable = false
-	var isLongPressKeyPress = false
+	@objc var isLongPressEnable = false
+	@objc var isLongPressKeyPress = false
 	
-	var currentMode: Int = 0
+	@objc var currentMode: Int = 0
 	var keyboard_type: UIKeyboardType?
 
-    var viewController: KeyboardViewController?  = nil
+    @objc var viewController: KeyboardViewController?  = nil
 	
     fileprivate func MakeLongPressGesturesRecognizer()
     {
@@ -44,7 +44,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
         self.MakeLongPressGesturesRecognizer()
     }
 
-    convenience init(frame: CGRect, viewController: KeyboardViewController) {
+    @objc convenience init(frame: CGRect, viewController: KeyboardViewController) {
         self.init(frame: frame)
 
         self.viewController = viewController
@@ -69,7 +69,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    func handleControl(_ view: UIView?, controlEvent: UIControlEvents) {
+    @objc func handleControl(_ view: UIView?, controlEvent: UIControlEvents) {
         if let control = view as? UIControl {
             let targets = control.allTargets
             for target in targets {
@@ -155,7 +155,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
 	}
 	
     // TODO: there's a bit of "stickiness" to Apple's implementation
-    func findNearestView(_ position: CGPoint) -> UIView? {
+    @objc func findNearestView(_ position: CGPoint) -> UIView? {
 
         if !self.bounds.contains(position) {
             return nil
@@ -185,7 +185,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
         return closest?.0
     }
 
-    func removeSubviews()
+    @objc func removeSubviews()
     {
         for view in self.subviews {
             view.removeFromSuperview()
@@ -193,21 +193,21 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
     }
 
     // reset tracked views without cancelling current touch
-    func resetTrackedViews() {
+    @objc func resetTrackedViews() {
         for view in self.touchToView.values {
             self.handleControl(view, controlEvent: .touchCancel)
         }
         self.touchToView.removeAll(keepingCapacity: true)
     }
 	
-	func resetPopUpViews() {
+	@objc func resetPopUpViews() {
 		for view in self.touchToView.values {
 			
 			(view as? KeyboardKey)?.hidePopup()
 		}
 	}
 	
-    func ownView(_ newTouch: UITouch, viewToOwn: UIView?) -> Bool {
+    @objc func ownView(_ newTouch: UITouch, viewToOwn: UIView?) -> Bool {
         var foundView = false
         
         if viewToOwn != nil {
@@ -364,7 +364,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
         }
     }
 
-    func isLongPressEnableKey(_ key: KeyboardKey?) -> Bool {
+    @objc func isLongPressEnableKey(_ key: KeyboardKey?) -> Bool {
 
         // REVIEW We need to determine whether the key that got pressed has a list of long presses for the current state
         // but the only way to get that is to go through a portal to the view controller. This seems unnecessarily convoluted.
@@ -382,7 +382,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
     }
 
 	
-	func getCYRView() -> CYRKeyboardButtonView!
+	@objc func getCYRView() -> CYRKeyboardButtonView!
 	{
         for anyView in self.superview!.subviews {
 
@@ -395,7 +395,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
 		return nil
 	}
 	
-	func getCYRButton() -> CYRKeyboardButton!
+	@objc func getCYRButton() -> CYRKeyboardButton!
 	{
         for anyView in self.superview!.subviews {
 

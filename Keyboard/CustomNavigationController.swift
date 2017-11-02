@@ -13,11 +13,11 @@ import Foundation
 
 class CustomNavigationController : UINavigationController {
 
-    var countViews: Int = 0
+    @objc var countViews: Int = 0
 
     // Something of a hack: we may have to totally redraw the keyboard when we dismiss the nav controller
     // e.g. if the user selected a different layout
-    var parentKeyboardVC: KeyboardViewController? = nil
+    @objc var parentKeyboardVC: KeyboardViewController? = nil
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         countViews += 1
@@ -52,7 +52,7 @@ class CustomNavigationController : UINavigationController {
         self.pushViewController(UIViewController(), animated: false)
     }
 
-    convenience init (parent: KeyboardViewController)
+    @objc convenience init (parent: KeyboardViewController)
     {
         self.init()
         self.parentKeyboardVC = parent

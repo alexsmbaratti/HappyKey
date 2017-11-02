@@ -21,7 +21,7 @@ class BackspaceShape: Shape {
 }
 
 class ShiftShape: Shape {
-    var withLock: Bool = false {
+    @objc var withLock: Bool = false {
         didSet {
             self.overflowCanvas.setNeedsDisplay()
         }
@@ -39,7 +39,7 @@ class GlobeShape: Shape {
 }
 
 class Shape: UIView {
-    var color: UIColor? {
+    @objc var color: UIColor? {
         didSet {
             if self.color != nil {
                 self.overflowCanvas.setNeedsDisplay()
@@ -48,7 +48,7 @@ class Shape: UIView {
     }
     
     // in case shapes draw out of bounds, we still want them to show
-    var overflowCanvas: OverflowCanvas!
+    @objc var overflowCanvas: OverflowCanvas!
     
     convenience init() {
         self.init(frame: CGRect.zero)
@@ -91,12 +91,12 @@ class Shape: UIView {
         self.overflowCanvas.setNeedsDisplay()
     }
     
-    func drawCall(_ color: UIColor) { /* override me! */ }
+    @objc func drawCall(_ color: UIColor) { /* override me! */ }
     
     class OverflowCanvas: UIView {
-        unowned var shape: Shape
+        @objc unowned var shape: Shape
         
-        init(shape: Shape) {
+        @objc init(shape: Shape) {
             self.shape = shape
             
             super.init(frame: CGRect.zero)

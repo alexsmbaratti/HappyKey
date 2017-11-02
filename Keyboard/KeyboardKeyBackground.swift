@@ -12,20 +12,20 @@ import UIKit
 // (You can still move it around, resize it, and add subviews to it. It just won't display the curve assigned to it.)
 class KeyboardKeyBackground: UIView, Connectable {
     
-    var fillPath: UIBezierPath?
-    var underPath: UIBezierPath?
-    var edgePaths: [UIBezierPath]?
+    @objc var fillPath: UIBezierPath?
+    @objc var underPath: UIBezierPath?
+    @objc var edgePaths: [UIBezierPath]?
     
     // do not set this manually
-    var cornerRadius: CGFloat
-    var underOffset: CGFloat
+    @objc var cornerRadius: CGFloat
+    @objc var underOffset: CGFloat
     
-    var startingPoints: [CGPoint]
+    @objc var startingPoints: [CGPoint]
     var segmentPoints: [(CGPoint, CGPoint)]
-    var arcCenters: [CGPoint]
-    var arcStartingAngles: [CGFloat]
+    @objc var arcCenters: [CGPoint]
+    @objc var arcStartingAngles: [CGFloat]
     
-    var dirty: Bool
+    @objc var dirty: Bool
 
     var attached: Direction? {
         didSet {
@@ -33,14 +33,14 @@ class KeyboardKeyBackground: UIView, Connectable {
             self.setNeedsLayout()
         }
     }
-    var hideDirectionIsOpposite: Bool {
+    @objc var hideDirectionIsOpposite: Bool {
         didSet {
             self.dirty = true
             self.setNeedsLayout()
         }
     }
     
-    init(cornerRadius: CGFloat, underOffset: CGFloat) {
+    @objc init(cornerRadius: CGFloat, underOffset: CGFloat) {
         attached = nil
         hideDirectionIsOpposite = false
         dirty = false
@@ -93,11 +93,11 @@ class KeyboardKeyBackground: UIView, Connectable {
         self.dirty = false
     }
     
-    let floatPi = CGFloat(M_PI)
-    let floatPiDiv2 = CGFloat(M_PI/2.0)
-    let floatPiDivNeg2 = -CGFloat(M_PI/2.0)
+    @objc let floatPi = CGFloat(M_PI)
+    @objc let floatPiDiv2 = CGFloat(M_PI/2.0)
+    @objc let floatPiDivNeg2 = -CGFloat(M_PI/2.0)
     
-    func generatePointsForDrawing(_ bounds: CGRect) {
+    @objc func generatePointsForDrawing(_ bounds: CGRect) {
         let segmentWidth = bounds.width
         let segmentHeight = bounds.height - CGFloat(underOffset)
         

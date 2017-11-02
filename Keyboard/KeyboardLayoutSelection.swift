@@ -13,8 +13,8 @@ let kCheckmarkCharacter = "\u{2713}" // Unicode character "CHECK MARK (U+2713)"
 
 class CheckedTableViewCell: UITableViewCell {
 
-    var checkMark: UILabel = UILabel(frame: CGRect.zero)
-    var label: UILabel = UILabel(frame: CGRect.zero)
+    @objc var checkMark: UILabel = UILabel(frame: CGRect.zero)
+    @objc var label: UILabel = UILabel(frame: CGRect.zero)
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 
@@ -48,7 +48,7 @@ class CheckedTableViewCell: UITableViewCell {
 
     }
 
-    func addConstraints() {
+    @objc func addConstraints() {
         self.addSubview(self.checkMark)
         self.addSubview(self.label)
 

@@ -10,79 +10,79 @@ import UIKit
 
 // TODO: need to rename, consolidate, and define terms
 class LayoutConstants: NSObject {
-    class var landscapeRatio: CGFloat { get { return 2 }}
+    @objc class var landscapeRatio: CGFloat { get { return 2 }}
     
     // side edges increase on 6 in portrait
-    class var sideEdgesPortraitArray: [CGFloat] { get { return [3, 4] }}
-    class var sideEdgesPortraitWidthThreshholds: [CGFloat] { get { return [400] }}
-    class var sideEdgesLandscape: CGFloat { get { return 3 }}
+    @objc class var sideEdgesPortraitArray: [CGFloat] { get { return [3, 4] }}
+    @objc class var sideEdgesPortraitWidthThreshholds: [CGFloat] { get { return [400] }}
+    @objc class var sideEdgesLandscape: CGFloat { get { return 3 }}
     
     // top edges decrease on various devices in portrait
-    class var topEdgePortraitArray: [CGFloat] { get { return [12, 10, 8] }}
-    class var topEdgePortraitWidthThreshholds: [CGFloat] { get { return [350, 400] }}
-    class var topEdgeLandscape: CGFloat { get { return 6 }}
+    @objc class var topEdgePortraitArray: [CGFloat] { get { return [12, 10, 8] }}
+    @objc class var topEdgePortraitWidthThreshholds: [CGFloat] { get { return [350, 400] }}
+    @objc class var topEdgeLandscape: CGFloat { get { return 6 }}
     
     // keyboard area shrinks in size in landscape on 6 and 6+
-    class var keyboardShrunkSizeArray: [CGFloat] { get { return [660, 524] }}
-    class var keyboardShrunkSizeWidthThreshholds: [CGFloat] { get { return [700] }}
-    class var keyboardShrunkSizeBaseWidthThreshhold: CGFloat { get { return 740 }}
+    @objc class var keyboardShrunkSizeArray: [CGFloat] { get { return [660, 524] }}
+    @objc class var keyboardShrunkSizeWidthThreshholds: [CGFloat] { get { return [700] }}
+    @objc class var keyboardShrunkSizeBaseWidthThreshhold: CGFloat { get { return 740 }}
     
     // row gaps are weird on 6 in portrait
-    class var rowGapPortraitArray: [CGFloat] { get { return [15, 11, 10] }}
-    class var rowGapPortraitThreshholds: [CGFloat] { get { return [350, 400] }}
-    class var rowGapPortraitLastRow: CGFloat { get { return 9 }}
-    class var rowGapPortraitLastRowIndex: Int { get { return 1 }}
-    class var rowGapLandscape: CGFloat { get { return 7 }}
+    @objc class var rowGapPortraitArray: [CGFloat] { get { return [15, 11, 10] }}
+    @objc class var rowGapPortraitThreshholds: [CGFloat] { get { return [350, 400] }}
+    @objc class var rowGapPortraitLastRow: CGFloat { get { return 9 }}
+    @objc class var rowGapPortraitLastRowIndex: Int { get { return 1 }}
+    @objc class var rowGapLandscape: CGFloat { get { return 7 }}
     
     // key gaps have weird and inconsistent rules
-    class var keyGapPortraitNormal: CGFloat { get { return 6 }}
-    class var keyGapPortraitSmall: CGFloat { get { return 5 }}
-    class var keyGapPortraitNormalThreshhold: CGFloat { get { return 350 }}
-    class var keyGapPortraitUncompressThreshhold: CGFloat { get { return 350 }}
-    class var keyGapLandscapeNormal: CGFloat { get { return 10 }}
-    class var keyGapLandscapeSmall: CGFloat { get { return 5 }}
+    @objc class var keyGapPortraitNormal: CGFloat { get { return 6 }}
+    @objc class var keyGapPortraitSmall: CGFloat { get { return 5 }}
+    @objc class var keyGapPortraitNormalThreshhold: CGFloat { get { return 350 }}
+    @objc class var keyGapPortraitUncompressThreshhold: CGFloat { get { return 350 }}
+    @objc class var keyGapLandscapeNormal: CGFloat { get { return 10 }}
+    @objc class var keyGapLandscapeSmall: CGFloat { get { return 5 }}
     // TODO: 5.5 row gap on 5L
     // TODO: wider row gap on 6L
-    class var keyCompressedThreshhold: Int { get { return 11 }}
+    @objc class var keyCompressedThreshhold: Int { get { return 11 }}
     
     // rows with two special keys on the side and characters in the middle (usually 3rd row)
     // TODO: these are not pixel-perfect, but should be correct within a few pixels
     // TODO: are there any "hidden constants" that would allow us to get rid of the multiplier? see: popup dimensions
-    class var flexibleEndRowTotalWidthToKeyWidthMPortrait: CGFloat { get { return 1 }}
-    class var flexibleEndRowTotalWidthToKeyWidthCPortrait: CGFloat { get { return -14 }}
-    class var flexibleEndRowTotalWidthToKeyWidthMLandscape: CGFloat { get { return 0.9231 }}
-    class var flexibleEndRowTotalWidthToKeyWidthCLandscape: CGFloat { get { return -9.4615 }}
-    class var flexibleEndRowMinimumStandardCharacterWidth: CGFloat { get { return 7 }}
+    @objc class var flexibleEndRowTotalWidthToKeyWidthMPortrait: CGFloat { get { return 1 }}
+    @objc class var flexibleEndRowTotalWidthToKeyWidthCPortrait: CGFloat { get { return -14 }}
+    @objc class var flexibleEndRowTotalWidthToKeyWidthMLandscape: CGFloat { get { return 0.9231 }}
+    @objc class var flexibleEndRowTotalWidthToKeyWidthCLandscape: CGFloat { get { return -9.4615 }}
+    @objc class var flexibleEndRowMinimumStandardCharacterWidth: CGFloat { get { return 7 }}
     
-    class var lastRowKeyGapPortrait: CGFloat { get { return 6 }}
-    class var lastRowKeyGapLandscapeArray: [CGFloat] { get { return [8, 7, 5] }}
-    class var lastRowKeyGapLandscapeWidthThreshholds: [CGFloat] { get { return [500, 700] }}
+    @objc class var lastRowKeyGapPortrait: CGFloat { get { return 6 }}
+    @objc class var lastRowKeyGapLandscapeArray: [CGFloat] { get { return [8, 7, 5] }}
+    @objc class var lastRowKeyGapLandscapeWidthThreshholds: [CGFloat] { get { return [500, 700] }}
     
     // TODO: approxmiate, but close enough
-    class var lastRowPortraitFirstTwoButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.24 }}
-    class var lastRowLandscapeFirstTwoButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.19 }}
-    class var lastRowPortraitLastButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.24 }}
-    class var lastRowLandscapeLastButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.19 }}
-    class var micButtonPortraitWidthRatioToOtherSpecialButtons
+    @objc class var lastRowPortraitFirstTwoButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.24 }}
+    @objc class var lastRowLandscapeFirstTwoButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.19 }}
+    @objc class var lastRowPortraitLastButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.24 }}
+    @objc class var lastRowLandscapeLastButtonAreaWidthToKeyboardAreaWidth: CGFloat { get { return 0.19 }}
+    @objc class var micButtonPortraitWidthRatioToOtherSpecialButtons
         : CGFloat { get { return 0.765 }}
     
     // TODO: not exactly precise
-    class var popupGap: CGFloat { get { return 8 }}
-    class var popupWidthIncrement: CGFloat { get { return 26 }}
-    class var popupTotalHeightArray: [CGFloat] { get { return [102, 108] }}
-    class var popupTotalHeightDeviceWidthThreshholds: [CGFloat] { get { return [350] }}
+    @objc class var popupGap: CGFloat { get { return 8 }}
+    @objc class var popupWidthIncrement: CGFloat { get { return 26 }}
+    @objc class var popupTotalHeightArray: [CGFloat] { get { return [102, 108] }}
+    @objc class var popupTotalHeightDeviceWidthThreshholds: [CGFloat] { get { return [350] }}
     
-    class func sideEdgesPortrait(_ width: CGFloat) -> CGFloat {
+    @objc class func sideEdgesPortrait(_ width: CGFloat) -> CGFloat {
         return self.findThreshhold(self.sideEdgesPortraitArray, threshholds: self.sideEdgesPortraitWidthThreshholds, measurement: width)
     }
-    class func topEdgePortrait(_ width: CGFloat) -> CGFloat {
+    @objc class func topEdgePortrait(_ width: CGFloat) -> CGFloat {
         return self.findThreshhold(self.topEdgePortraitArray, threshholds: self.topEdgePortraitWidthThreshholds, measurement: width)
     }
-    class func rowGapPortrait(_ width: CGFloat) -> CGFloat {
+    @objc class func rowGapPortrait(_ width: CGFloat) -> CGFloat {
         return self.findThreshhold(self.rowGapPortraitArray, threshholds: self.rowGapPortraitThreshholds, measurement: width)
     }
     
-    class func rowGapPortraitLastRow(_ width: CGFloat) -> CGFloat {
+    @objc class func rowGapPortraitLastRow(_ width: CGFloat) -> CGFloat {
         let index = self.findThreshholdIndex(self.rowGapPortraitThreshholds, measurement: width)
         if index == self.rowGapPortraitLastRowIndex {
             return self.rowGapPortraitLastRow
@@ -92,7 +92,7 @@ class LayoutConstants: NSObject {
         }
     }
     
-    class func keyGapPortrait(_ width: CGFloat, rowCharacterCount: Int) -> CGFloat {
+    @objc class func keyGapPortrait(_ width: CGFloat, rowCharacterCount: Int) -> CGFloat {
         let compressed = (rowCharacterCount >= self.keyCompressedThreshhold)
         if compressed {
             if width >= self.keyGapPortraitUncompressThreshhold {
@@ -106,7 +106,7 @@ class LayoutConstants: NSObject {
             return self.keyGapPortraitNormal
         }
     }
-    class func keyGapLandscape(_ width: CGFloat, rowCharacterCount: Int) -> CGFloat {
+    @objc class func keyGapLandscape(_ width: CGFloat, rowCharacterCount: Int) -> CGFloat {
         let compressed = (rowCharacterCount >= self.keyCompressedThreshhold)
         let shrunk = self.keyboardIsShrunk(width)
         if compressed || shrunk {
@@ -117,15 +117,15 @@ class LayoutConstants: NSObject {
         }
     }
     
-    class func lastRowKeyGapLandscape(_ width: CGFloat) -> CGFloat {
+    @objc class func lastRowKeyGapLandscape(_ width: CGFloat) -> CGFloat {
         return self.findThreshhold(self.lastRowKeyGapLandscapeArray, threshholds: self.lastRowKeyGapLandscapeWidthThreshholds, measurement: width)
     }
     
-    class func keyboardIsShrunk(_ width: CGFloat) -> Bool {
+    @objc class func keyboardIsShrunk(_ width: CGFloat) -> Bool {
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         return (isPad ? false : width >= self.keyboardShrunkSizeBaseWidthThreshhold)
     }
-    class func keyboardShrunkSize(_ width: CGFloat) -> CGFloat {
+    @objc class func keyboardShrunkSize(_ width: CGFloat) -> CGFloat {
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         if isPad {
             return width
@@ -139,15 +139,15 @@ class LayoutConstants: NSObject {
         }
     }
     
-    class func popupTotalHeight(_ deviceWidth: CGFloat) -> CGFloat {
+    @objc class func popupTotalHeight(_ deviceWidth: CGFloat) -> CGFloat {
         return self.findThreshhold(self.popupTotalHeightArray, threshholds: self.popupTotalHeightDeviceWidthThreshholds, measurement: deviceWidth)
     }
     
-    class func findThreshhold(_ elements: [CGFloat], threshholds: [CGFloat], measurement: CGFloat) -> CGFloat {
+    @objc class func findThreshhold(_ elements: [CGFloat], threshholds: [CGFloat], measurement: CGFloat) -> CGFloat {
         assert(elements.count == threshholds.count + 1, "elements and threshholds do not match")
         return elements[self.findThreshholdIndex(threshholds, measurement: measurement)]
     }
-    class func findThreshholdIndex(_ threshholds: [CGFloat], measurement: CGFloat) -> Int {
+    @objc class func findThreshholdIndex(_ threshholds: [CGFloat], measurement: CGFloat) -> Int {
         for (i, threshhold) in threshholds.reversed().enumerated() {
             if measurement >= threshhold {
                 let actualIndex = threshholds.count - i
@@ -159,41 +159,41 @@ class LayoutConstants: NSObject {
 }
 
 class GlobalColors: NSObject {
-    class var lightModeRegularKey: UIColor { get { return UIColor.white }}
+    @objc class var lightModeRegularKey: UIColor { get { return UIColor.white }}
 
-    class var darkModeRegularKey: UIColor { get { return UIColor.white.withAlphaComponent(CGFloat(0.3)) }}
+    @objc class var darkModeRegularKey: UIColor { get { return UIColor.white.withAlphaComponent(CGFloat(0.3)) }}
 
-    class var lightModeSpecialKey: UIColor { get { return UIColor(red: CGFloat(177)/CGFloat(255), green: CGFloat(177)/CGFloat(255), blue: CGFloat(177)/CGFloat(255), alpha: 1) }}
+    @objc class var lightModeSpecialKey: UIColor { get { return UIColor(red: CGFloat(177)/CGFloat(255), green: CGFloat(177)/CGFloat(255), blue: CGFloat(177)/CGFloat(255), alpha: 1) }}
 
-    class var darkModeSpecialKey: UIColor { get { return UIColor.gray.withAlphaComponent(CGFloat(0.3)) }}
+    @objc class var darkModeSpecialKey: UIColor { get { return UIColor.gray.withAlphaComponent(CGFloat(0.3)) }}
 
-    class var darkModeShiftKeyDown: UIColor { get { return UIColor(red: CGFloat(214)/CGFloat(255), green: CGFloat(220)/CGFloat(255), blue: CGFloat(208)/CGFloat(255), alpha: 1) }}
+    @objc class var darkModeShiftKeyDown: UIColor { get { return UIColor(red: CGFloat(214)/CGFloat(255), green: CGFloat(220)/CGFloat(255), blue: CGFloat(208)/CGFloat(255), alpha: 1) }}
 
-    class var lightModePopup: UIColor { get { return GlobalColors.lightModeRegularKey }}
+    @objc class var lightModePopup: UIColor { get { return GlobalColors.lightModeRegularKey }}
 
-    class var darkModePopup: UIColor { get { return UIColor.gray }}
+    @objc class var darkModePopup: UIColor { get { return UIColor.gray }}
 
-    class var lightModeUnderColor: UIColor { get { return UIColor(hue: (220/360.0), saturation: 0.04, brightness: 0.56, alpha: 1) }}
+    @objc class var lightModeUnderColor: UIColor { get { return UIColor(hue: (220/360.0), saturation: 0.04, brightness: 0.56, alpha: 1) }}
 
-    class var darkModeUnderColor: UIColor { get { return UIColor(red: CGFloat(38.6)/CGFloat(255), green: CGFloat(18)/CGFloat(255), blue: CGFloat(39.3)/CGFloat(255), alpha: 0.4) }}
+    @objc class var darkModeUnderColor: UIColor { get { return UIColor(red: CGFloat(38.6)/CGFloat(255), green: CGFloat(18)/CGFloat(255), blue: CGFloat(39.3)/CGFloat(255), alpha: 0.4) }}
 
-    class var lightModeTextColor: UIColor { get { return UIColor.black }}
+    @objc class var lightModeTextColor: UIColor { get { return UIColor.black }}
 
-    class var darkModeTextColor: UIColor { get { return UIColor.white }}
+    @objc class var darkModeTextColor: UIColor { get { return UIColor.white }}
 
-    class var lightModeBorderColor: UIColor { get { return UIColor(hue: (214/360.0), saturation: 0.04, brightness: 0.65, alpha: 1.0) }}
+    @objc class var lightModeBorderColor: UIColor { get { return UIColor(hue: (214/360.0), saturation: 0.04, brightness: 0.65, alpha: 1.0) }}
 
-    class var darkModeBorderColor: UIColor { get { return UIColor.clear }}
+    @objc class var darkModeBorderColor: UIColor { get { return UIColor.clear }}
     
-    class func regularKey(_ darkMode: Bool) -> UIColor {
+    @objc class func regularKey(_ darkMode: Bool) -> UIColor {
         return darkMode ? self.darkModeRegularKey : self.lightModeRegularKey
     }
     
-    class func popup(_ darkMode: Bool) -> UIColor {
+    @objc class func popup(_ darkMode: Bool) -> UIColor {
         return darkMode ? self.darkModePopup : self.lightModePopup
     }
     
-    class func specialKey(_ darkMode: Bool) -> UIColor {
+    @objc class func specialKey(_ darkMode: Bool) -> UIColor {
         return darkMode ? self.darkModeSpecialKey : self.lightModeSpecialKey
     }
 }
@@ -217,24 +217,24 @@ extension CGSize: Hashable {
 // handles the layout for the keyboard, including key spacing and arrangement
 class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     
-    var layoutConstants: LayoutConstants.Type
+    @objc var layoutConstants: LayoutConstants.Type
     
     unowned var model: Keyboard
-    unowned var superview: UIView
+    @objc unowned var superview: UIView
     var modelToView: [Key:KeyboardKey] = [:]
     var viewToModel: [KeyboardKey:Key] = [:]
     
-    var keyPool: [KeyboardKey] = []
-    var nonPooledMap: [String:KeyboardKey] = [:]
-    var sizeToKeyMap: [CGSize:[KeyboardKey]] = [:]
-    var shapePool: [String:Shape] = [:]
+    @objc var keyPool: [KeyboardKey] = []
+    @objc var nonPooledMap: [String:KeyboardKey] = [:]
+    @objc var sizeToKeyMap: [CGSize:[KeyboardKey]] = [:]
+    @objc var shapePool: [String:Shape] = [:]
     
-    var darkMode: Bool
-    var solidColorMode: Bool
-    var initialized: Bool
+    @objc var darkMode: Bool
+    @objc var solidColorMode: Bool
+    @objc var initialized: Bool
 
     // optimization: ensures quick mode and shift transitions
-    func rasterizeKeys(_ rasterize: Bool)
+    @objc func rasterizeKeys(_ rasterize: Bool)
     {
         for view in self.keyPool {
             view.shouldRasterize = rasterize
@@ -254,7 +254,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     }
     
     // TODO: remove this method
-    func initialize()
+    @objc func initialize()
     {
         assert(!self.initialized, "already initialized")
         self.initialized = true
@@ -299,7 +299,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         CATransaction.commit()
     }
     
-    func positionKeys(_ pageNum: Int) {
+    @objc func positionKeys(_ pageNum: Int) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -336,7 +336,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         CATransaction.commit()
     }
 
-    func updateKeyAppearance() {
+    @objc func updateKeyAppearance() {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -532,12 +532,12 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         }
     }
 
-    func createNewKey() -> KeyboardKey {
+    @objc func createNewKey() -> KeyboardKey {
         return ImageKey(vibrancy: nil)
     }
     
     // if pool is disabled, always generates a new key
-    func generateKey() -> KeyboardKey {
+    @objc func generateKey() -> KeyboardKey {
         let createAndSetupNewKey = { () -> KeyboardKey in
             let keyView = self.createNewKey()
             
@@ -572,7 +572,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     }
 
     // if pool is disabled, doesn't do anything
-    func resetKeyPool() {
+    @objc func resetKeyPool() {
 
         self.sizeToKeyMap.removeAll(keepingCapacity: true)
 
@@ -592,7 +592,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
 
     // TODO: no support for more than one of the same shape
     // if pool disabled, always returns new shape
-    func getShape(_ shapeClass: Shape.Type) -> Shape {
+    @objc func getShape(_ shapeClass: Shape.Type) -> Shape {
         let className = NSStringFromClass(shapeClass)
 
         if let shape = self.shapePool[className] {
@@ -609,7 +609,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     // LAYOUT FUNCTIONS //
     //////////////////////
     
-    func rounded(_ measurement: CGFloat) -> CGFloat {
+    @objc func rounded(_ measurement: CGFloat) -> CGFloat {
         return round(measurement * UIScreen.main.scale) / UIScreen.main.scale
     }
     
@@ -890,6 +890,6 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         }
     }
     
-    func willHidePopup(_ key: KeyboardKey) {
+    @objc func willHidePopup(_ key: KeyboardKey) {
     }
 }

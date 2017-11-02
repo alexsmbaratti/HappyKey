@@ -13,7 +13,7 @@ let kUnknownLookupKey = "UNKNOWN"
 
 class LanguageSettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var tableView = UITableView()
+    @objc var tableView = UITableView()
     fileprivate var _languageDefinitions : LanguageDefinitions? = nil
     fileprivate var _navController: CustomNavigationController? = nil
 
@@ -53,7 +53,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
         ("Languages", ["English"])
     ]
 
-    var settingsNames: [String:String] {
+    @objc var settingsNames: [String:String] {
         get {
             return [
                 kAutoCapitalization: "Auto-Capitalization",
@@ -64,7 +64,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
         }
     }
 
-    var settingsNotes: [String: String] {
+    @objc var settingsNotes: [String: String] {
         get {
             return [
                 kSmallLowercase: "Changes your key caps to lowercase when Shift is off, making it easier to tell what mode you are in."
@@ -72,7 +72,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
         }
     }
 
-    func addConstraints() {
+    @objc func addConstraints() {
         let views = ["tableView" : self.tableView]
         let metrics = ["pad" : 1]
 
@@ -132,7 +132,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
         return self.settingsList[section].0
     }
 
-    func formatHeader(_ label: UILabel?) {
+    @objc func formatHeader(_ label: UILabel?) {
         let colorScheme = ColorScheme.ColorSchemeChooser(darkMode)
         label?.textColor = colorScheme.sectionLabelColor()
         label?.backgroundColor=colorScheme.sectionBackgroundColor()
@@ -179,7 +179,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
 
     }
 
-    func switchToKeyboardSelectionViewController(_ recognizer: UITapGestureRecognizer, langCode: String) {
+    @objc func switchToKeyboardSelectionViewController(_ recognizer: UITapGestureRecognizer, langCode: String) {
 
         let vc = KeyboardSelectionViewController(keyboardDefinitions: ["QWERTY", "AZERTY", "QWERTZ"], langCode: langCode)
 
@@ -190,7 +190,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
         self.tableView.reloadData()
     }
 
-    func updateAppearance() {
+    @objc func updateAppearance() {
         //super.updateAppearance()
 
         let colorScheme = ColorScheme.ColorSchemeChooser(darkMode)
@@ -205,7 +205,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
 
     }
 
-    func toggleSetting(_ sender: UISwitch) {
+    @objc func toggleSetting(_ sender: UISwitch) {
         if let cell = sender.superview as? UITableViewCell {
             if let indexPath = self.tableView.indexPath(for: cell) {
                 let descriptor = self.settingsList[(indexPath as NSIndexPath).section].1[(indexPath as NSIndexPath).row]
@@ -225,9 +225,9 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
 
 class DefaultSettingsTableViewCell: UITableViewCell {
 
-    var sw: UISwitch
-    var label: UILabel
-    var settingLookupKey: String
+    @objc var sw: UISwitch
+    @objc var label: UILabel
+    @objc var settingLookupKey: String
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.sw = UISwitch()
@@ -256,7 +256,7 @@ class DefaultSettingsTableViewCell: UITableViewCell {
         self.addConstraints()
     }
 
-    func toggleSetting(_ sender: UISwitch) {
+    @objc func toggleSetting(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: self.settingLookupKey)
     }
 
@@ -267,7 +267,7 @@ class DefaultSettingsTableViewCell: UITableViewCell {
 
     }
 
-    func addConstraints() {
+    @objc func addConstraints() {
         self.addSubview(self.sw)
         self.addSubview(self.label)
 
@@ -304,7 +304,7 @@ class DefaultSettingsTableViewCell: UITableViewCell {
 
 class OptionWithDescription : DefaultSettingsTableViewCell
 {
-    var longLabel: UITextView
+    @objc var longLabel: UITextView
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.longLabel = MakeUITextView()
@@ -375,10 +375,10 @@ class OptionWithDescription : DefaultSettingsTableViewCell
 
 class LanguageSettingsCell : DefaultSettingsTableViewCell
 {
-    var kbdChanger: UITextView
-    var kbdName: UITextView
-    var parentViewController: LanguageSettingsViewController? = nil
-    var langCode : String = "EN"
+    @objc var kbdChanger: UITextView
+    @objc var kbdName: UITextView
+    @objc var parentViewController: LanguageSettingsViewController? = nil
+    @objc var langCode : String = "EN"
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         self.kbdName = MakeUITextView()

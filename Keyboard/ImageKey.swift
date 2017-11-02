@@ -10,7 +10,7 @@ import UIKit
 
 class ImageKey: KeyboardKey {
     
-    var image: UIImageView? {
+    @objc var image: UIImageView? {
         willSet {
             let anImage = image
             anImage?.removeFromSuperview()
@@ -43,7 +43,7 @@ class ImageKey: KeyboardKey {
         self.redrawImage()
     }
     
-    func redrawImage() {
+    @objc func redrawImage() {
         if let image = self.image {
             let imageSize = CGSize(width: 20, height: 20)
             let imageOrigin = CGPoint(

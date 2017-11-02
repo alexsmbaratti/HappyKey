@@ -6,7 +6,7 @@ import UIKit
 
 class LightDarkView: UIView {
     
-    var darkMode: Bool {
+    @objc var darkMode: Bool {
         didSet {
             if oldValue != darkMode {
                 updateAppearance()
@@ -14,9 +14,9 @@ class LightDarkView: UIView {
         }
     }
     
-    var solidColorMode: Bool
+    @objc var solidColorMode: Bool
 
-    required init(darkMode: Bool, solidColorMode: Bool) {
+    @objc required init(darkMode: Bool, solidColorMode: Bool) {
         self.darkMode = darkMode
         self.solidColorMode = solidColorMode
 
@@ -35,7 +35,7 @@ class LightDarkView: UIView {
     }
 
 
-    func updateAppearance() {
+    @objc func updateAppearance() {
     }
 
 }

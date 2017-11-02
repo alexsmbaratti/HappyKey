@@ -11,7 +11,7 @@ import UIKit
 let kChooseTitle = "Choose one of the following keyboards"
 
 class KeyboardSelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var tableView = UITableView()
+    @objc var tableView = UITableView()
     fileprivate var _keyboardDefinitions : [String] = []
     fileprivate var _langCode = "EN"
 
@@ -20,7 +20,7 @@ class KeyboardSelectionViewController: UIViewController, UITableViewDataSource, 
         super.init(nibName: nil, bundle: nil)
     }
 
-    convenience init(keyboardDefinitions: [String], langCode: String)
+    @objc convenience init(keyboardDefinitions: [String], langCode: String)
     {
         self.init()
 
@@ -42,7 +42,7 @@ class KeyboardSelectionViewController: UIViewController, UITableViewDataSource, 
         fatalError("loading from nib not supported")
     }
 
-    func addConstraints() {
+    @objc func addConstraints() {
         let views = ["tableView" : self.tableView]
         let metrics = ["pad" : 1]
 
@@ -85,7 +85,7 @@ class KeyboardSelectionViewController: UIViewController, UITableViewDataSource, 
         return kChooseTitle
     }
 
-    func formatHeader(_ label: UILabel?) {
+    @objc func formatHeader(_ label: UILabel?) {
         let colorScheme = ColorScheme.ColorSchemeChooser(darkMode)
         label?.textColor = colorScheme.sectionLabelColor()
         label?.backgroundColor=colorScheme.sectionBackgroundColor()

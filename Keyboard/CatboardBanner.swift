@@ -15,10 +15,10 @@ with something (or leave it blank if you like.)
 
 class CatboardBanner: SuggestionView {
     
-    var catSwitch: UISwitch = UISwitch()
-    var catLabel: UILabel = UILabel()
+    @objc var catSwitch: UISwitch = UISwitch()
+    @objc var catLabel: UILabel = UILabel()
 	
-	var touchToView: [UITouch:UIView]
+	@objc var touchToView: [UITouch:UIView]
 
     required init(darkMode: Bool, solidColorMode: Bool) {
 		self.touchToView = [:]
@@ -41,12 +41,12 @@ class CatboardBanner: SuggestionView {
 
     }
     
-    func respondToSwitch() {
+    @objc func respondToSwitch() {
         UserDefaults.standard.set(self.catSwitch.isOn, forKey: kCatTypeEnabled)
         self.updateAppearance()
     }
 
-    func suggestionButton() -> UIButton {
+    @objc func suggestionButton() -> UIButton {
         let btn = UIButton(type: .custom)
         btn.isExclusiveTouch = true
         btn.titleLabel!.minimumScaleFactor = 0.6
@@ -91,7 +91,7 @@ class CatboardBanner: SuggestionView {
 	}
 
 	
-	func addConstraintsToButtons()
+	@objc func addConstraintsToButtons()
 	{
         var buttons = [btn1,btn2,btn3]
 
@@ -124,7 +124,7 @@ class CatboardBanner: SuggestionView {
                 let firstButton = buttons[0]
                 let widthConstraint = NSLayoutConstraint(item: firstButton, attribute: .width, relatedBy: .equal, toItem: button, attribute: .width, multiplier: 1.0, constant: 1)
 
-                widthConstraint.priority = 800
+                widthConstraint.priority = UILayoutPriority(rawValue: 800)
                 self.addConstraint(widthConstraint)
 
             }
@@ -236,7 +236,7 @@ class CatboardBanner: SuggestionView {
 	}
 	
 	// TODO: there's a bit of "stickiness" to Apple's implementation
-	func findNearestView(_ position: CGPoint) -> UIView? {
+	@objc func findNearestView(_ position: CGPoint) -> UIView? {
 		if !self.bounds.contains(position) {
 			return nil
 		}
@@ -272,7 +272,7 @@ class CatboardBanner: SuggestionView {
 		}
 	}
 	
-	func distanceBetween(_ rect: CGRect, point: CGPoint) -> CGFloat {
+	@objc func distanceBetween(_ rect: CGRect, point: CGPoint) -> CGFloat {
 		if rect.contains(point) {
 			return 0
 		}
@@ -297,7 +297,7 @@ class CatboardBanner: SuggestionView {
 		return CGFloat(sqrt(a + b));
 	}
 	
-	func ownView(_ newTouch: UITouch, viewToOwn: UIView?) -> Bool {
+	@objc func ownView(_ newTouch: UITouch, viewToOwn: UIView?) -> Bool {
 		var foundView = false
 		
 		if viewToOwn != nil {
@@ -319,7 +319,7 @@ class CatboardBanner: SuggestionView {
 		return foundView
 	}
 	
-	func handleControl(_ view: UIView?, controlEvent: UIControlEvents) {
+	@objc func handleControl(_ view: UIView?, controlEvent: UIControlEvents) {
 		if let control = view as? UIControl {
 			let targets = control.allTargets
 			for target in targets { // TODO: Xcode crashes
