@@ -1,5 +1,5 @@
 //
-//  CatboardBanner.swift
+//  HappyKeyboardBanner.swift
 //  TastyImitationKeyboard
 //
 //  Created by Alexei Baboulevitch on 10/5/14.
@@ -13,7 +13,7 @@ This is the demo banner. The banner is needed so that the top row popups have so
 with something (or leave it blank if you like.)
 */
 
-class CatboardBanner: SuggestionView {
+class HappyKeyboardBanner: SuggestionView {
     
     @objc var catSwitch: UISwitch = UISwitch()
     @objc var catLabel: UILabel = UILabel()

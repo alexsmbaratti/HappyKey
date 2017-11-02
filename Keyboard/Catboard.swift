@@ -1,5 +1,5 @@
 //
-//  Catboard.swift
+//  HappyKeyboard.swift
 //  TransliteratingKeyboard
 //
 //  Created by Alexei Baboulevitch on 9/24/14.
@@ -15,7 +15,7 @@ set the name of your KeyboardViewController subclass in the Info.plist file.
 
 let kCatTypeEnabled = "kCatTypeEnabled"
 
-class Catboard: KeyboardViewController {
+class HappyKeyboard: KeyboardViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         UserDefaults.standard.register(defaults: [kCatTypeEnabled: true])
@@ -78,7 +78,7 @@ class Catboard: KeyboardViewController {
     }
     
     override func createBanner() -> SuggestionView {
-        return CatboardBanner(darkMode: false, solidColorMode: self.solidColorMode())
+        return HappyKeyboardBanner(darkMode: false, solidColorMode: self.solidColorMode())
     }
     
 }
