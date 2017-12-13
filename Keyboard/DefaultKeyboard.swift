@@ -152,7 +152,15 @@ func addSymbolsPage(_ defaultKeyboard: Keyboard)
 func addDefaultBottomRowKeys(_ defaultKeyboard: Keyboard, modeChange: Key, pageNumber: Int)
 {
     defaultKeyboard.addKey(modeChange, row: 3, page: pageNumber)
-    defaultKeyboard.addKey(Key.NextKbdKey(), row: 3, page: pageNumber)
+    if UIDevice().userInterfaceIdiom == .phone {
+        switch UIScreen.main.nativeBounds.height {
+        case 2436:
+            print("iPhone X") // Removes keyboard key for iPhone X because the key is natively displayed in the bottom portion of space
+        default:
+            defaultKeyboard.addKey(Key.NextKbdKey(), row: 3, page: pageNumber)
+        }
+    }
+    
     defaultKeyboard.addKey(Key.SpaceKey(), row: 3, page: pageNumber)
     defaultKeyboard.addKey(Key.PeriodKey(), row: 3, page: pageNumber)
     defaultKeyboard.addKey(Key.ReturnKey(), row: 3, page: pageNumber)
