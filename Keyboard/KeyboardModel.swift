@@ -151,7 +151,7 @@ class Key: Hashable {
         if self.type == .keyboardChange {
             let enabledLangs = EnabledLanguageCodes()
 
-            var values : [String] = [SpecialUnicodeSymbols.NextKeyboardSymbol, SpecialUnicodeSymbols.GearSymbol]
+            var values : [String] = [SpecialUnicodeSymbols.NextKeyboardSymbol]
 
             // Allow switching between languages if more than one language is enabled
             if enabledLangs.count > 1 {
