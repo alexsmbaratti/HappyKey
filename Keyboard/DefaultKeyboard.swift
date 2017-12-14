@@ -122,7 +122,7 @@ func languageSpecificKeyboard() -> Keyboard?
 func addNumericPage(_ defaultKeyboard: Keyboard)
 {
     AddSpecialCharacters(defaultKeyboard, characters: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], row: 0, page: 1)
-    AddSpecialCharacters(defaultKeyboard, characters: ["-", "/", ":", ";", "(", ")", "$", "&", "@", "\""], row: 1, page: 1)
+    AddSpecialCharacters(defaultKeyboard, characters: ["-", "~", ":", "°", "(", "π", "$", "&", "@", "\""], row: 1, page: 1)
 
     defaultKeyboard.addKey(Key.ModeChangeSpecialChars(), row: 2, page: 1)
 
@@ -152,15 +152,11 @@ func addSymbolsPage(_ defaultKeyboard: Keyboard)
 func addDefaultBottomRowKeys(_ defaultKeyboard: Keyboard, modeChange: Key, pageNumber: Int)
 {
     defaultKeyboard.addKey(modeChange, row: 3, page: pageNumber)
-    if UIDevice().userInterfaceIdiom == .phone {
-        switch UIScreen.main.nativeBounds.height {
-        case 2436:
-            print("iPhone X") // Removes keyboard key for iPhone X because the key is natively displayed in the bottom portion of space
-        default:
-            defaultKeyboard.addKey(Key.NextKbdKey(), row: 3, page: pageNumber)
-        }
+    if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
+    } else {
+        defaultKeyboard.addKey(Key.NextKbdKey(), row: 3, page: pageNumber)
     }
-    
+
     defaultKeyboard.addKey(Key.SpaceKey(), row: 3, page: pageNumber)
     defaultKeyboard.addKey(Key.PeriodKey(), row: 3, page: pageNumber)
     defaultKeyboard.addKey(Key.ReturnKey(), row: 3, page: pageNumber)

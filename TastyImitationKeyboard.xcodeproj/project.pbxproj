@@ -55,6 +55,7 @@
 		82FD1A931B0B3D3800A6D23D /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */; };
 		FA9FA9821FABC6400075219B /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA9FA9811FABC6400075219B /* Background.jpg */; };
 		FA9FA9841FABC7700075219B /* Smile.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9FA9831FABC7700075219B /* Smile.png */; };
+		FACFBCBC1FE243B5002DB660 /* iPadMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACFBCBB1FE243B5002DB660 /* iPadMain.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		FA9FA9811FABC6400075219B /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		FA9FA9831FABC7700075219B /* Smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smile.png; sourceTree = "<group>"; };
+		FACFBCBB1FE243B5002DB660 /* iPadMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPadMain.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
 				4EF16F9519D255030076AFCB /* ViewController.swift */,
 				4EF16F9D19D2552E0076AFCB /* Main.storyboard */,
+				FACFBCBB1FE243B5002DB660 /* iPadMain.storyboard */,
 				4EF16F9319D255030076AFCB /* Images.xcassets */,
 				4E807D9619461D9000D875D1 /* Supporting Files */,
 			);
@@ -586,6 +589,7 @@
 			files = (
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
 				4EF16F9F19D2552E0076AFCB /* Main.storyboard in Resources */,
+				FACFBCBC1FE243B5002DB660 /* iPadMain.storyboard in Resources */,
 				FA9FA9841FABC7700075219B /* Smile.png in Resources */,
 				FA9FA9821FABC6400075219B /* Background.jpg in Resources */,
 			);
