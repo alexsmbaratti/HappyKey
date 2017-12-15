@@ -25,7 +25,7 @@ class HappyKeyboardBanner: SuggestionView {
 		
         super.init(darkMode: darkMode, solidColorMode: solidColorMode)
 		
-        self.makeButtons(["The", "What", "I"])
+//        self.makeButtons(["The", "What", "I"])
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -72,10 +72,10 @@ class HappyKeyboardBanner: SuggestionView {
         self.addSubview(self.btn2)
         self.addSubview(self.btn3)
 
-		addConstraintsToButtons()
+        addConstraintsToButtons()
     }
 
-	override func draw(_ rect: CGRect) {}
+//    override func draw(_ rect: CGRect) {}
 	
 	override func hitTest(_ point: CGPoint, with event: UIEvent!) -> UIView? {
 		

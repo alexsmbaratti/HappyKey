@@ -83,23 +83,20 @@
                        "keys": [
                                 {
                                 "label": "+",
-                                "longPress": ["a","á", "à", "ä", "â", "ã", "å", "æ","ā"],
-                                "shiftLabel": "A",
-                                "shiftLongPress": ["A","Á","À","Ä","Â","Ã","Å","Æ","Ā"]
+                        
+                                "shiftLabel": "+"
                                 },
                                 
                                 {
                                 "label": "-",
-                                "longPress": ["s","š"],
-                                "shiftLabel": "S",
-                                "shiftLongPress": ["S","Š"]
+                                "shiftLabel": "-"
                                 },
                                 
                                 {
                                 "label": "x",
-                                "longPress": ["d", "đ"],
-                                "shiftLabel": "D",
-                                "shiftLongPress": ["D","Đ"]
+                                "longPress": ["•", "x"],
+                                "shiftLabel": "•",
+                                "shiftLongPress": ["•","x"]
                                 },
                                 
                                 {
@@ -110,32 +107,38 @@
                                 
                                 {
                                 "label": "<",
-                                "shiftLabel": "<"
-                                },
-                                
-                                {
-                                "label": "≤",
-                                "shiftLabel": "≤"
+                                "shiftLabel": "<",
+                                "longPress": ["<","≤"],
+                                "shiftLongPress": ["<","≤"]
                                 },
                                 
                                 {
                                 "label": "=",
                                 "shiftLabel": "=",
-                                "longPress": ["=","≠"]
+                                "longPress": ["=","≠","≅"],
+                                "shiftLongPress": ["=","≠","≅"]
                                 },
                                 
                                 {
                                 "label": ">",
-                                "shiftLabel": ">"
+                                "shiftLabel": ">",
+                                "longPress": [">","≥"],
+                                "shiftLongPress": [">","≥"]
                                 },
                                 
                                 {
-                                "label": "≥",
-                                "shiftLabel": "≥"
+                                "label": "x",
+                                "shiftLabel": "x"
                                 },
+                                
                                 {
-                                "label": "≠",
-                                "shiftLabel": "≠"
+                                "label": "y",
+                                "shiftLabel": "y"
+                                },
+                                
+                                {
+                                "label": "t",
+                                "shiftLabel": "t"
                                 }
                                 ]
                        },
@@ -144,36 +147,46 @@
                        "keys": [
                                 {
                                 "label": ".",
-                                "shiftLabel": "Z"
+                                "shiftLabel": "."
                                 },
                                 
                                 {
                                 "label": ",",
-                                "shiftLabel": "X"
+                                "shiftLabel": ","
                                 },
                                 
                                 {
                                 "label": "(",
-                                "longPress": ["c", "ç", "ć", "č"],
+                                "longPress": ["(", "⁽"],
                                 "shiftLabel": "(",
-                                "shiftLongPress": ["C","Ç","Ć","Č"]
+                                "shiftLongPress": ["(", "⁽"]
                                 },
                                 
                                 {
                                 "label": ")",
-                                "shiftLabel": ")"
+                                "longPress": [")", "⁾"],
+                                "shiftLabel": ")",
+                                "shiftLongPress": [")", "⁾"]
                                 },
                                 
                                 {
                                 "label": "[",
-                                "shiftLabel": "[",
-                                "longPress": ["[", "{"]
+                                "shiftLabel": "["
                                 },
                                 
                                 {
                                 "label": "]",
-                                "shiftLabel": "]",
-                                "longPress": ["]", "}"]
+                                "shiftLabel": "]"
+                                },
+                                
+                                {
+                                "label": "{",
+                                "shiftLabel": "{"
+                                },
+                                
+                                {
+                                "label": "}",
+                                "shiftLabel": "}"
                                 },
                                 
                                 {

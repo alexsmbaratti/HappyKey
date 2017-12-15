@@ -278,7 +278,7 @@ class Key: Hashable {
     class func ModeChangeNumbersKey() -> Key
     {
         let keyModeChangeNumbers = Key(.modeChange)
-        keyModeChangeNumbers.uppercaseKeyCap = "123"
+        keyModeChangeNumbers.uppercaseKeyCap = "≅~∠°"
         keyModeChangeNumbers.toMode = 1
         return keyModeChangeNumbers
         
@@ -287,7 +287,7 @@ class Key: Hashable {
     class func ModeChangeLettersKey() -> Key
     {
         let keyModeChangeLetters = Key(.modeChange)
-        keyModeChangeLetters.uppercaseKeyCap = "ABC"
+        keyModeChangeLetters.uppercaseKeyCap = "+-•/"
         keyModeChangeLetters.toMode = 0
         return keyModeChangeLetters
     }

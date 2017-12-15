@@ -20,19 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-rM-66w">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="920"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xea-iY-wvs">
-                                <rect key="frame" x="238" y="20" width="124" height="30"/>
-                                <state key="normal" title="Dismiss Keyboard">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismiss" destination="nAo-DR-8Pl" eventType="touchUpInside" id="P7f-VJ-4k8"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Normal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jto-Fw-99T">
-                                <rect key="frame" x="16" y="58" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Normal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jto-Fw-99T">
+                                <rect key="frame" x="16" y="58" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -40,13 +31,22 @@
                                 <rect key="frame" x="67" y="407" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xea-iY-wvs">
+                                <rect key="frame" x="125" y="96" width="124" height="30"/>
+                                <state key="normal" title="Dismiss Keyboard">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss" destination="nAo-DR-8Pl" eventType="touchUpInside" id="P7f-VJ-4k8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jto-Fw-99T" firstAttribute="top" secondItem="xea-iY-wvs" secondAttribute="bottom" constant="8" id="2PO-BH-UYU"/>
                             <constraint firstItem="ibI-K4-iKz" firstAttribute="trailing" secondItem="IC3-rM-66w" secondAttribute="trailing" id="2Tb-f1-RXm"/>
                             <constraint firstItem="IC3-rM-66w" firstAttribute="leading" secondItem="ibI-K4-iKz" secondAttribute="leading" id="6fk-Jg-LEU"/>
-                            <constraint firstItem="ibI-K4-iKz" firstAttribute="bottom" secondItem="IC3-rM-66w" secondAttribute="bottom" id="CAM-uD-RD7"/>
+                            <constraint firstItem="ibI-K4-iKz" firstAttribute="bottom" secondItem="Jto-Fw-99T" secondAttribute="bottom" constant="690" id="CAM-uD-RD7"/>
                             <constraint firstItem="IC3-rM-66w" firstAttribute="top" secondItem="aBi-zl-Xx9" secondAttribute="top" id="F9u-ma-0Be"/>
                             <constraint firstItem="xea-iY-wvs" firstAttribute="top" secondItem="ibI-K4-iKz" secondAttribute="top" id="FcX-JF-0f0"/>
                             <constraint firstItem="ibI-K4-iKz" firstAttribute="centerX" secondItem="xea-iY-wvs" secondAttribute="centerX" id="Tdh-Nc-qEN"/>
@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvK-BB-OCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.2" y="564.46776611694156"/>
+            <point key="canvasLocation" x="-127.2" y="563.79310344827593"/>
         </scene>
     </scenes>
     <resources>

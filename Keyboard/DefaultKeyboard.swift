@@ -58,7 +58,7 @@ func languageSpecificKeyboard() -> Keyboard?
                                                     // HACKHACK Splice in the shift key
                                                     if rowIndex == 2 {
 
-                                                        newKeyboard.addKey(Key(.shift), row: rowIndex, page: pageIndex)
+//                                                        newKeyboard.addKey(Key(.shift), row: rowIndex, page: pageIndex)
                                                     }
 
                                                     for oneKey in keys {
@@ -122,11 +122,11 @@ func languageSpecificKeyboard() -> Keyboard?
 func addNumericPage(_ defaultKeyboard: Keyboard)
 {
     AddSpecialCharacters(defaultKeyboard, characters: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], row: 0, page: 1)
-    AddSpecialCharacters(defaultKeyboard, characters: ["-", "~", ":", "°", "(", "π", "$", "&", "@", "\""], row: 1, page: 1)
+    AddSpecialCharacters(defaultKeyboard, characters: ["≅", "~", "∠", "°", "θ", "π", "Δ", "ℝ", "→", "∞"], row: 1, page: 1)
 
-    defaultKeyboard.addKey(Key.ModeChangeSpecialChars(), row: 2, page: 1)
+//    defaultKeyboard.addKey(Key.ModeChangeSpecialChars(), row: 2, page: 1)
 
-    AddSpecialCharacters(defaultKeyboard, characters: [".", ",", "?", "!", "'"], row: 2, page: 1)
+    AddSpecialCharacters(defaultKeyboard, characters: ["±", "√", "ˣ", "ᵗ", "⁺", "⁻", "⁽", "⁾", "^"], row: 2, page: 1)
 
     defaultKeyboard.addKey(Key(.backspace), row: 2, page: 1)
     
@@ -158,7 +158,7 @@ func addDefaultBottomRowKeys(_ defaultKeyboard: Keyboard, modeChange: Key, pageN
     }
 
     defaultKeyboard.addKey(Key.SpaceKey(), row: 3, page: pageNumber)
-    defaultKeyboard.addKey(Key.PeriodKey(), row: 3, page: pageNumber)
+//    defaultKeyboard.addKey(Key.PeriodKey(), row: 3, page: pageNumber)
     defaultKeyboard.addKey(Key.ReturnKey(), row: 3, page: pageNumber)
 }
 
