@@ -83,7 +83,6 @@
                        "keys": [
                                 {
                                 "label": "+",
-                        
                                 "shiftLabel": "+"
                                 },
                                 
@@ -93,10 +92,10 @@
                                 },
                                 
                                 {
-                                "label": "x",
-                                "longPress": ["•", "x"],
+                                "label": "•",
+                                "longPress": ["•", "×"],
                                 "shiftLabel": "•",
-                                "shiftLongPress": ["•","x"]
+                                "shiftLongPress": ["•","×"]
                                 },
                                 
                                 {
@@ -128,17 +127,23 @@
                                 
                                 {
                                 "label": "x",
-                                "shiftLabel": "x"
+                                "shiftLabel": "x",
+                                "longPress": ["x","ˣ"],
+                                "shiftLongPress": ["x","ˣ"]
                                 },
                                 
                                 {
                                 "label": "y",
-                                "shiftLabel": "y"
+                                "shiftLabel": "y",
+                                "longPress": ["y","ʸ"],
+                                "shiftLongPress": ["y","ʸ"]
                                 },
                                 
                                 {
                                 "label": "t",
-                                "shiftLabel": "t"
+                                "shiftLabel": "t",
+                                "longPress": ["t","ᵗ"],
+                                "shiftLongPress": ["t","ᵗ"]
                                 }
                                 ]
                        },
