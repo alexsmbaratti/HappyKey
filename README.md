@@ -1,6 +1,6 @@
 # HappyKey
 
-HappyKey was a project created during my sophomore year of high school. My friend, [Ryan Nemiroff](http://github.com/RyGuy101), and I helped create the original version of HappyKey. It was a math keyboard that would make it easier to type out answers for math tests. It's safe to say that the original design has aged a bit. As of writing this, I am now a freshmen at ASU studying software engineering and I am working to revive this project with a new design and potentially new function. 
+HappyKey was a project created during my sophomore year of high school. My friend, [Ryan Nemiroff](http://github.com/RyGuy101), and I helped create the original version of HappyKey. It was a math keyboard that would make it easier to type out answers for math tests. It's safe to say that the original design has aged a bit. This repository rewrites the keyboard for more functionality (i.e. holding on the numbers for superscripts and subscripts), adds Swift 4 compatibility, and has a brand new user interface and app icon. 
 
 # Original Forked README for Tasty Imitation Keyboard
 
