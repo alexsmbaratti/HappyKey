@@ -2,6 +2,8 @@
 
 HappyKey was a project created during my sophomore year of high school. My friend, [Ryan Nemiroff](http://github.com/RyGuy101), and I helped create the original version of HappyKey. It was a math keyboard that would make it easier to type out answers for math tests. It's safe to say that the original design has aged a bit. This repository rewrites the keyboard with more functionality (i.e. holding on the numbers for superscripts and subscripts), adds Swift 4 compatibility, and has a brand new user interface and app icon. 
 
+[![alt text](appstore.png)](https://itunes.apple.com/us/app/happy-grader-keyboard/id965705471?ls=1&mt=8)
+
 # Original Forked README for Tasty Imitation Keyboard
 
 I'm working on a 3rd party keyboard for iOS8 and I want it to look and feel as close as possible to Apple's keyboard. Unfortunately, it's not possible to access the keyboard view through code, so this is my attempt to imitate it by hand. (I'm sure there are ways to get even more accuracy via reverse engineering, but that's too much work for me!) In the end, I hope to produce a coherent and robust baseline for creating custom 3rd party keybards — at least, until Apple decides to fully open up their keyboard API.
