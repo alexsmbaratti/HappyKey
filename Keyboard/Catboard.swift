@@ -39,7 +39,7 @@ class HappyKeyboard: KeyboardViewController {
         if key.type == .character || key.type == .specialCharacter {
             let context = textDocumentProxy.documentContextBeforeInput
             if context != nil {
-                if context!.characters.count < 2 {
+                if context!.count < 2 {
                     InsertText(keyOutput)
                     return
                 }
@@ -47,13 +47,13 @@ class HappyKeyboard: KeyboardViewController {
                 var index = context!.endIndex
               
                 index = context!.index( before: index )
-                if context?.characters[index] != " " {
+                if context?[index] != " " {
                     InsertText(keyOutput)
                     return
                 }
                 
                 index = context!.index(before: index)
-                if context?.characters[index] == " " {
+                if context?[index] == " " {
                     InsertText(keyOutput)
                     return
                 }

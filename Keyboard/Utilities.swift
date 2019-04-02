@@ -58,7 +58,7 @@ func stringIsWhitespace(_ str: String?) -> Bool {
 
 func isInitCaps(_ string: String) -> Bool
 {
-    return string.characters.count > 0
+    return string.count > 0
         && ("A"..."Z").contains(string[string.startIndex])
 }
 

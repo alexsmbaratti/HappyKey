@@ -341,7 +341,7 @@ class KeyboardViewController: UIInputViewController {
             self.toggleSettings()
             return true
 
-        } else if selection.characters.count == 2 {
+        } else if selection.count == 2 {
             // switch language AND keyboard layout
             ChangeKeyboardLanguage(selection)
             return true
@@ -653,7 +653,7 @@ class KeyboardViewController: UIInputViewController {
             let charactersAreInCorrectState = { () -> Bool in
                 let previousContext = self.textDocumentProxy.documentContextBeforeInput
 				
-                if previousContext == nil || previousContext!.characters.count < 3 {
+                if previousContext == nil || previousContext!.count < 3 {
                     return false
                 }
 				
@@ -842,7 +842,7 @@ class KeyboardViewController: UIInputViewController {
 
             case .words:
                 if let beforeContext = documentProxy.documentContextBeforeInput {
-                    let previousCharacter = beforeContext[beforeContext.characters.index(before: beforeContext.endIndex)]
+                    let previousCharacter = beforeContext[beforeContext.index(before: beforeContext.endIndex)]
                     return characterIsWhitespace(previousCharacter)
                 }
 
@@ -850,7 +850,7 @@ class KeyboardViewController: UIInputViewController {
 
             case .sentences:
                 if let beforeContext = documentProxy.documentContextBeforeInput {
-                    let offset = min(3, beforeContext.characters.count)
+                    let offset = min(3, beforeContext.count)
                     var index = beforeContext.endIndex
                     
                     for i in 0 ..< offset {
@@ -969,7 +969,7 @@ class KeyboardViewController: UIInputViewController {
             }
 
             // Tapping on the suggestion replaces the word we've been inserting into the text buffer
-            for _ in 0 ..< WordStore.CurrentWordStore().CurrentWord.characters.count {
+            for _ in 0 ..< WordStore.CurrentWordStore().CurrentWord.count {
                 self.textDocumentProxy.deleteBackward()
             }
 
