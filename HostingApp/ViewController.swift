@@ -15,10 +15,10 @@ class HostingAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillChangeFrame:"), name: UIKeyboardWillChangeFrameNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardDidChangeFrame(_:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HostingAppViewController.keyboardDidChangeFrame(_:)), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
         
         // Animation Test
 //        var imageNames = ["frame-000000.png", "frame-000001.png", "frame-000002.png", "frame-000003.png", "frame-000004.png", "frame-000005.png", "frame-000006.png", "frame-000007.png", "frame-000008.png", "frame-000009.png", "frame-000010.png", "frame-000011.png", "frame-000012.png", "frame-000013.png", "frame-000014.png", "frame-000015.png", "frame-000016.png", "frame-000017.png", "frame-000018.png", "frame-000019.png", "frame-000020.png", "frame-000021.png", "frame-000022.png", "frame-000023.png", "frame-000024.png", "frame-000025.png", "frame-000026.png", "frame-000027.png", "frame-000028.png", "frame-000029.png", "frame-000030.png", "frame-000031.png", "frame-000032.png", "frame-000033.png", "frame-000034.png", "frame-000035.png", "frame-000036.png", "frame-000037.png", "frame-000038.png", "frame-000039.png", "frame-000040.png", "frame-000041.png", "frame-000042.png", "frame-000043.png", "frame-000044.png", "frame-000045.png", "frame-000046.png", "frame-000047.png", "frame-000048.png"]
@@ -69,7 +69,7 @@ class HostingAppViewController: UIViewController {
       
       if let userInfo = notification.userInfo
       {
-        if let frameEnd = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        if let frameEnd = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         {
           if frameEnd.height == referenceHeight {
             if firstHeightTime == nil {

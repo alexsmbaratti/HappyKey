@@ -16,7 +16,7 @@ class CheckedTableViewCell: UITableViewCell {
     @objc var checkMark: UILabel = UILabel(frame: CGRect.zero)
     @objc var label: UILabel = UILabel(frame: CGRect.zero)
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -28,7 +28,7 @@ class CheckedTableViewCell: UITableViewCell {
 
     convenience init(layout: String, isDefault: Bool, colorScheme: ColorScheme)
     {
-        self.init(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+        self.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
 
         self.checkMark.text = isDefault ? kCheckmarkCharacter : ""
         self.checkMark.translatesAutoresizingMaskIntoConstraints = false

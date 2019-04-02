@@ -51,8 +51,8 @@ class HappyKeyboardBanner: SuggestionView {
         btn.isExclusiveTouch = true
         btn.titleLabel!.minimumScaleFactor = 0.6
         btn.backgroundColor = UIColor(red:0.68, green:0.71, blue:0.74, alpha:1)
-        btn.setTitle("", for: UIControlState())
-        btn.setTitleColor(UIColor.white, for: UIControlState())
+        btn.setTitle("", for: UIControl.State())
+        btn.setTitleColor(UIColor.white, for: UIControl.State())
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.titleLabel!.adjustsFontSizeToFitWidth = true
@@ -319,7 +319,7 @@ class HappyKeyboardBanner: SuggestionView {
 		return foundView
 	}
 	
-	@objc func handleControl(_ view: UIView?, controlEvent: UIControlEvents) {
+	@objc func handleControl(_ view: UIView?, controlEvent: UIControl.Event) {
 		if let control = view as? UIControl {
 			let targets = control.allTargets
 			for target in targets { // TODO: Xcode crashes

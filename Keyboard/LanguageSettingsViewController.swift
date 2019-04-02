@@ -154,13 +154,13 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
         if (indexPath as NSIndexPath).section == LanguagesSection {
             let descriptiveName = LanguageDefinitions.Singleton().DescriptiveNameForLangCode(key)
 
-            let cell = LanguageSettingsCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+            let cell = LanguageSettingsCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
             cell.initializeValues(descriptiveName, langCode: key, colorScheme: colorScheme, parentViewController: self)
 
             return cell
         }
         else if let explanatoryText = self.settingsNotes[key] {
-            let cell = OptionWithDescription(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+            let cell = OptionWithDescription(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
             cell.initializeValues(key,
                 label: self.settingsNames[key] ?? key,
                 description: explanatoryText,
@@ -169,7 +169,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
             return cell
         }
         else {
-            let cell = DefaultSettingsTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+            let cell = DefaultSettingsTableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
             cell.initializeValues(key,
                 label: self.settingsNames[key] ?? key,
                 colorScheme: colorScheme)
@@ -197,7 +197,7 @@ class LanguageSettingsViewController: UIViewController, UITableViewDataSource, U
 
         // We have to explicitly redraw the section headings or they stay the same color if the user
         // flips between dark mode and light mode.
-        self.tableView.reloadSections(IndexSet(integersIn: NSMakeRange(0, settingsList.count).toRange()!), with: UITableViewRowAnimation.automatic)
+        self.tableView.reloadSections(IndexSet(integersIn: NSMakeRange(0, settingsList.count).toRange()!), with: UITableView.RowAnimation.automatic)
 
             for cell in self.tableView.visibleCells {
                 (cell as? DefaultSettingsTableViewCell)?.applyColorScheme(colorScheme)
@@ -229,7 +229,7 @@ class DefaultSettingsTableViewCell: UITableViewCell {
     @objc var label: UILabel
     @objc var settingLookupKey: String
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.sw = UISwitch()
         self.label = UILabel(frame: CGRect.zero)
         self.settingLookupKey = kUnknownLookupKey
@@ -248,7 +248,7 @@ class DefaultSettingsTableViewCell: UITableViewCell {
     {
         self.settingLookupKey = setting
         self.sw.isOn = UserDefaults.standard.bool(forKey: setting)
-        self.sw.addTarget(self, action: #selector(LanguageSettingsViewController.toggleSetting(_:)), for: UIControlEvents.valueChanged)
+        self.sw.addTarget(self, action: #selector(LanguageSettingsViewController.toggleSetting(_:)), for: UIControl.Event.valueChanged)
 
         self.label.text = label
 
@@ -306,7 +306,7 @@ class OptionWithDescription : DefaultSettingsTableViewCell
 {
     @objc var longLabel: UITextView
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.longLabel = MakeUITextView()
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -380,7 +380,7 @@ class LanguageSettingsCell : DefaultSettingsTableViewCell
     @objc var parentViewController: LanguageSettingsViewController? = nil
     @objc var langCode : String = "HappyKey"
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.kbdName = MakeUITextView()
         self.kbdChanger = MakeUITextView()
 
@@ -395,7 +395,7 @@ class LanguageSettingsCell : DefaultSettingsTableViewCell
         self.parentViewController = parentViewController
 
         self.sw.isOn = getLanguageCodeEnabled(langCode)
-        self.sw.addTarget(self, action: #selector(LanguageSettingsViewController.toggleSetting(_:)), for: UIControlEvents.valueChanged)
+        self.sw.addTarget(self, action: #selector(LanguageSettingsViewController.toggleSetting(_:)), for: UIControl.Event.valueChanged)
 
         self.label.text = descriptiveName
         self.kbdName.text = getKeyboardLayoutNameForLanguageCode(self.langCode)

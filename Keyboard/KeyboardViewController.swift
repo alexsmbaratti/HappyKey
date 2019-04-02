@@ -186,10 +186,10 @@ class KeyboardViewController: UIInputViewController {
             kludge.translatesAutoresizingMaskIntoConstraints = false
             kludge.isHidden = true
             
-            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
+            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
             self.view.addConstraints([a, b, c, d])
             
             self.kludge = kludge
@@ -259,7 +259,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @objc func solidColorMode() -> Bool {
-        return UIAccessibilityIsReduceTransparencyEnabled()
+        return UIAccessibility.isReduceTransparencyEnabled
     }
     
     var lastLayoutBounds: CGRect?
@@ -408,7 +408,7 @@ class KeyboardViewController: UIInputViewController {
 		
         if !self.forwardingView.isLongPressEnable {
 
-            self.view.bringSubview(toFront: self.bannerView!)
+            self.view.bringSubviewToFront(self.bannerView!)
 		}
 
 		viewLongPopUp.isHidden = true
@@ -443,7 +443,7 @@ class KeyboardViewController: UIInputViewController {
             for rowKeys in page.rows { // TODO: quick hack
                 for key in rowKeys {
                     if let keyView = self.layout?.viewForKey(key) {
-                        keyView.removeTarget(nil, action: nil, for: UIControlEvents.allEvents)
+                        keyView.removeTarget(nil, action: nil, for: UIControl.Event.allEvents)
 						
                         switch key.type {
 
@@ -456,7 +456,7 @@ class KeyboardViewController: UIInputViewController {
                             keyView.addTarget(self, action: #selector(KeyboardViewController.advanceTapped), for: .touchUpInside)
 
                         case Key.KeyType.backspace:
-                            let cancelEvents: UIControlEvents = [UIControlEvents.touchUpInside, UIControlEvents.touchUpInside, UIControlEvents.touchDragExit, UIControlEvents.touchUpOutside, UIControlEvents.touchCancel, UIControlEvents.touchDragOutside]
+                            let cancelEvents: UIControl.Event = [UIControl.Event.touchUpInside, UIControl.Event.touchUpInside, UIControl.Event.touchDragExit, UIControl.Event.touchUpOutside, UIControl.Event.touchCancel, UIControl.Event.touchDragOutside]
                             
                             keyView.addTarget(self, action: #selector(KeyboardViewController.backspaceDown(_:)), for: .touchDown)
                             keyView.addTarget(self, action: #selector(KeyboardViewController.backspaceUp(_:)), for: cancelEvents)
@@ -519,7 +519,7 @@ class KeyboardViewController: UIInputViewController {
         if proxy.keyboardType != UIKeyboardType.numberPad && proxy.keyboardType != UIKeyboardType.decimalPad {
 
             // Push the top row of suggestion buttons back so we can draw the popup over the top
-            self.view.sendSubview(toBack: self.bannerView!)
+            self.view.sendSubviewToBack(self.bannerView!)
 
             sender.showPopup()
 		}
@@ -545,7 +545,7 @@ class KeyboardViewController: UIInputViewController {
 
         // Restore the top row of suggestion buttons.
         // We had to push them to the back so the key popup could draw in that space.
-        self.view.bringSubview(toFront: self.bannerView!)
+        self.view.bringSubviewToFront(self.bannerView!)
 
     }
 
@@ -586,10 +586,10 @@ class KeyboardViewController: UIInputViewController {
         if self.heightConstraint == nil {
             self.heightConstraint = NSLayoutConstraint(
                 item:self.view,
-                attribute:NSLayoutAttribute.height,
-                relatedBy:NSLayoutRelation.equal,
+                attribute:NSLayoutConstraint.Attribute.height,
+                relatedBy:NSLayoutConstraint.Relation.equal,
                 toItem:nil,
-                attribute:NSLayoutAttribute.notAnAttribute,
+                attribute:NSLayoutConstraint.Attribute.notAnAttribute,
                 multiplier:0,
                 constant:height)
             self.heightConstraint!.priority = UILayoutPriority(rawValue: 999)
@@ -928,7 +928,7 @@ class KeyboardViewController: UIInputViewController {
 	{
         if let button = sender as? UIButton {
             button.backgroundColor = UIColor(red:0.68, green:0.71, blue:0.74, alpha:1)
-            button.setTitleColor(UIColor.white, for: UIControlState())
+            button.setTitleColor(UIColor.white, for: UIControl.State())
         }
 	}
 	
@@ -936,7 +936,7 @@ class KeyboardViewController: UIInputViewController {
 	{
         if let button = sender as? UIButton {
 
-            if let btn_title = button.title(for: UIControlState()) , !stringIsWhitespace(btn_title)  {
+            if let btn_title = button.title(for: UIControl.State()) , !stringIsWhitespace(btn_title)  {
                 self.bannerView?.showPressedAppearance(button)
             }
         }
@@ -961,7 +961,7 @@ class KeyboardViewController: UIInputViewController {
     {
         if let button = sender as? UIButton {
 
-            let title = TrimWhiteSpace(button.title(for: UIControlState()))
+            let title = TrimWhiteSpace(button.title(for: UIControl.State()))
 
             if title == ""
             {
@@ -1053,7 +1053,7 @@ class KeyboardViewController: UIInputViewController {
                 button.setupInputOptionsConfiguration(with: forwardingView)
                 self.view.insertSubview(self.viewLongPopUp, aboveSubview: self.forwardingView)
                 self.forwardingView.isLongPressEnable = true
-                self.view.bringSubview(toFront: self.viewLongPopUp)
+                self.view.bringSubviewToFront(self.viewLongPopUp)
                 
                 sender.tag = 0
                 

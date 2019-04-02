@@ -28,20 +28,20 @@ class SuggestionView: LightDarkView  {
     @objc func showPressedAppearance(_ button: UIButton)
     {
         button.backgroundColor = whitish
-        button.setTitleColor(UIColor.black, for: UIControlState())
+        button.setTitleColor(UIColor.black, for: UIControl.State())
     }
 
     @objc func showUnpressedAppearance(_ button: UIButton)
     {
         button.backgroundColor = bluishGray
-        button.setTitleColor(UIColor.white, for: UIControlState())
+        button.setTitleColor(UIColor.white, for: UIControl.State())
     }
 
     @objc func LabelSuggestionButtons(_ labels: [String])
     {
-        self.btn1.setTitle(labels.count > 0 ? labels[0] : "", for: UIControlState())
-        self.btn2.setTitle(labels.count > 1 ? labels[1] : "", for: UIControlState())
-        self.btn3.setTitle(labels.count > 2 ? labels[2] : "", for: UIControlState())
+        self.btn1.setTitle(labels.count > 0 ? labels[0] : "", for: UIControl.State())
+        self.btn2.setTitle(labels.count > 1 ? labels[1] : "", for: UIControl.State())
+        self.btn3.setTitle(labels.count > 2 ? labels[2] : "", for: UIControl.State())
     }
 
 }

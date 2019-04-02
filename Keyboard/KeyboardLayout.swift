@@ -806,7 +806,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     func layoutSpecialKeysRow(_ row: [Key], keyWidth: CGFloat, gapWidth: CGFloat, leftSideRatio: CGFloat, rightSideRatio: CGFloat, micButtonRatio: CGFloat, isLandscape: Bool, frame: CGRect) -> [CGRect] {
         var frames = [CGRect]()
         
-        let spaceIndex = row.index(where: { $0.type == Key.KeyType.space }) ?? 2
+        let spaceIndex = row.firstIndex(where: { $0.type == Key.KeyType.space }) ?? 2
 
         // We found the space key using zero based indexing. So the position of the space key is equal to the number of keys to left of space
         // if we were to count from one
