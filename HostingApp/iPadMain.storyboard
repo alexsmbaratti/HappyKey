@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bZq-JX-ar2">
-    <device id="ipad10_5" orientation="portrait">
+    <device id="ipad12_9rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,20 +15,24 @@
             <objects>
                 <viewController id="bZq-JX-ar2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k4s-qu-aBD">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-sa-sU6">
-                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1366"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Smile.png" translatesAutoresizingMaskIntoConstraints="NO" id="BJt-Yk-gbb">
-                                <rect key="frame" x="297" y="435" width="241" height="242"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smile.png" translatesAutoresizingMaskIntoConstraints="NO" id="BJt-Yk-gbb">
+                                <rect key="frame" x="664" y="627" width="242" height="239"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="QNl-mf-MZy"/>
+                                    <constraint firstAttribute="height" constant="239" id="YSu-xh-TgG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="242" id="hQH-Zm-ltG"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="239" id="zpy-rp-Wfw"/>
+                                </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="93k-4s-eMH">
-                                <rect key="frame" x="324" y="169" width="261" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="93k-4s-eMH">
+                                <rect key="frame" x="654" y="73" width="261" height="246"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the steps below to set up:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoT-6n-GeE">
                                         <rect key="frame" x="0.0" y="0.0" width="261" height="20.5"/>
@@ -104,15 +108,25 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.98591888530000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="261" id="61h-j4-Tyk"/>
+                                    <constraint firstAttribute="height" constant="246" id="vdA-nn-Es9"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="93k-4s-eMH" firstAttribute="centerX" secondItem="k4s-qu-aBD" secondAttribute="centerX" id="6p2-bz-9lq"/>
+                            <constraint firstItem="BJt-Yk-gbb" firstAttribute="top" secondItem="93k-4s-eMH" secondAttribute="bottom" constant="156" id="KzK-hl-xgW"/>
+                            <constraint firstItem="93k-4s-eMH" firstAttribute="top" secondItem="emI-S2-vhM" secondAttribute="top" constant="49" id="V5P-ZI-xJe"/>
+                            <constraint firstItem="BJt-Yk-gbb" firstAttribute="centerX" secondItem="k4s-qu-aBD" secondAttribute="centerX" id="vgD-0W-Zk9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="emI-S2-vhM"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqs-Ks-5zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457.55395683453241" y="-222.30215827338131"/>
+            <point key="canvasLocation" x="457.03124999999994" y="-222.6939970717423"/>
         </scene>
     </scenes>
     <resources>
