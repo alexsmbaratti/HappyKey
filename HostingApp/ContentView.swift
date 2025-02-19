@@ -36,6 +36,19 @@ struct ContentView: View {
                 
                 Spacer()
                 
+                Text("Setup")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+                Text("Open Settings, select Keyboards, and enable the HappyKey keyboard.")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+                
                 Button("Open Settings") {
                     if let url = URL(string: UIApplication.openSettingsURLString) {
                         UIApplication.shared.open(url)
@@ -47,6 +60,15 @@ struct ContentView: View {
             }
         }
         .navigationBarHidden(true)
+    }
+}
+
+struct KeyboardTestView: View {
+    @State var text = ""
+    var body: some View {
+        VStack {
+            TextEditor(text: $text)
+        }
     }
 }
 
