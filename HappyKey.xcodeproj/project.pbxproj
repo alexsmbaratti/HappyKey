@@ -845,7 +845,7 @@
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 3F83W36QSV;
 				INFOPLIST_FILE = HostingApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -872,7 +872,7 @@
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 3F83W36QSV;
 				INFOPLIST_FILE = HostingApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,7 +899,7 @@
 				DEVELOPMENT_TEAM = 3F83W36QSV;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Keyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -926,7 +926,7 @@
 				DEVELOPMENT_TEAM = 3F83W36QSV;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Keyboard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -959,7 +959,7 @@
 				);
 				INFOPLIST_FILE = KeyboardFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,7 +988,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = KeyboardFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1013,7 +1013,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = KeyboardFrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1034,7 +1034,7 @@
 				DEVELOPMENT_TEAM = 3F83W36QSV;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = KeyboardFrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1055,7 +1055,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = HostingAppUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1079,7 +1079,7 @@
 				DEVELOPMENT_TEAM = 3F83W36QSV;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = HostingAppUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

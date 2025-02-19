@@ -21,7 +21,7 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 Spacer()
                 
-                Image(systemName: "star.fill")
+                Image("Smile")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
