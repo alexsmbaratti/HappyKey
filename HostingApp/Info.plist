@@ -28,10 +28,6 @@
 	<false/>
 	<key>UILaunchStoryboardName</key>
 	<string>iPadMain</string>
-	<key>UIMainStoryboardFile~ipad</key>
-	<string>iPadMain</string>
-	<key>UIMainStoryboardFile~iphone</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
