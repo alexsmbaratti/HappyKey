@@ -10,19 +10,43 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Spacer()
-            Text("Test")
-            Spacer()
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color("LightBlue"), Color("DarkBlue")]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+                Spacer()
+                
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(.white)
+                
+                Text("HappyKey")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+                
+                Spacer()
+                
+                Button("Open Settings") {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Spacer()
+            }
         }
-//        .padding()
-//        .background(
-//            LinearGradient(
-//                gradient: Gradient(colors: [Color("LightBlue"), Color("DarkBlue")]),
-//                startPoint: .top,
-//                endPoint: .bottom
-//            )
-//        )
+        .navigationBarHidden(true)
     }
 }
 
