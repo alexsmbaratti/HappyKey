@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     let steps = [
-        OnboardingStep(image: Image("Smile"), title: "Welcome to HappyKey", description: "Math notation just got simpler! Follow these steps to setup your keyboard."),
+        OnboardingStep(image: Image("HappyKey"), title: "Welcome to HappyKey", description: "Math notation just got simpler! Follow these steps to setup your keyboard."),
         OnboardingStep(image: Image(systemName: "gear"), title: "Enable HappyKey in Settings", description: "Open Settings, select Keyboards, and enable the HappyKey keyboard."),
         OnboardingStep(image: Image(systemName: "globe"), title: "Switch Keyboards", description: "In any text field, just tap on the globe icon to switch to the HappyKey keyboard. Tap the globe icon again to switch back when finished."),
         OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and help. Superscripts and subscripts are available for numbers. Traditional multiplication and division symbols are also available."),
-        OnboardingStep(image: Image("Smile"), title: "You're All Set!", description: "Enjoy using the HappyKey keyboard anywhere you need math notation!")
+        OnboardingStep(image: Image("HappyKey"), title: "You're All Set!", description: "Enjoy using the HappyKey keyboard anywhere you need math notation!")
     ]
     
     var body: some View {
@@ -53,7 +53,7 @@ struct OnboardingStepView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .foregroundColor(.blue)
+                .foregroundStyle(index == 0 ? .white : index == steps.count - 1 ? Color("MainBlue") : .blue)
                 .rotationEffect(.degrees(rotationAngle))
                 .onAppear {
                     if index == steps.count - 1 {
@@ -85,6 +85,11 @@ struct OnboardingStepView: View {
                 }
                 .buttonStyle(.bordered)
             } else if index == 2 {
+                Text("Try typing y=2x+5 in the text field below.")
+                    .font(.title3)
+                    .foregroundStyle(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 30)
                 KeyboardTestView()
             } else if index == 4 {
                 Text("You may now exit the app.")
