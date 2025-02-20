@@ -15,7 +15,7 @@ struct ContentView: View {
         OnboardingStep(image: Image(systemName: "globe"), title: "Switch Keyboards", description: "In any text field, just tap on the globe icon to switch to the HappyKey keyboard. Tap the globe icon again to switch back when finished."),
         OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and help. Superscripts and subscripts are available for numbers. Traditional multiplication and division symbols are also available."),
         OnboardingStep(image: Image("Smile"), title: "You're All Set!", description: "Enjoy using the HappyKey keyboard anywhere you need math notation!")
-        ]
+    ]
     
     var body: some View {
         NavigationStack {
@@ -43,6 +43,8 @@ struct OnboardingStepView: View {
     let steps: [OnboardingStep]
     let index: Int
     
+    @State private var rotationAngle: Double = 0
+    
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
@@ -52,6 +54,16 @@ struct OnboardingStepView: View {
                 .scaledToFit()
                 .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
+                .rotationEffect(.degrees(rotationAngle))
+                .onAppear {
+                    if index == steps.count - 1 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                rotationAngle += 360
+                            }
+                        }
+                    }
+                }
             
             Text(step.title)
                 .font(.largeTitle)
