@@ -77,7 +77,15 @@ struct OnboardingStepView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
             
-            if index == 1 {
+            if index == 0 {
+                if keyboardIsIntalled() {
+                    Text("It appears that the HappyKey keyboard is already setup. Use it anywhere by selecting it from the keyboard switcher. This app is just for setup.")
+                        .font(.title3)
+                        .foregroundStyle(.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 30)
+                }
+            } else if index == 1 {
                 Button("Open Settings") {
                     if let url = URL(string: UIApplication.openSettingsURLString) {
                         UIApplication.shared.open(url)
@@ -134,6 +142,13 @@ struct OnboardingStepView: View {
     
     private func goToNextStep() {
         // Handle swipe navigation in NavigationStack
+    }
+    
+    func keyboardIsIntalled() -> Bool {
+        if let keyboards = UserDefaults.standard.dictionaryRepresentation()["AppleKeyboards"] as? [String] {
+            return keyboards.contains("com.blogspot.mathjoy.MathSymbols.Keyboard")
+        }
+        return false
     }
 }
 
