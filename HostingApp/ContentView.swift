@@ -13,7 +13,7 @@ struct ContentView: View {
         OnboardingStep(image: Image("HappyKey"), title: "Welcome to HappyKey", description: "Math notation just got simpler! Follow these steps to setup your keyboard."),
         OnboardingStep(image: Image(systemName: "gear"), title: "Enable HappyKey in Settings", description: "Open Settings, select Keyboards, and enable the HappyKey keyboard."),
         OnboardingStep(image: Image(systemName: "globe"), title: "Switch Keyboards", description: "In any text field, just tap on the globe icon to switch to the HappyKey keyboard. Tap the globe icon again to switch back when finished."),
-        OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and help. Superscripts and subscripts are available for numbers. Traditional multiplication and division symbols are also available."),
+        OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and held. Superscripts and subscripts are available for numbers. Traditional multiplication and division symbols are also available."),
         OnboardingStep(image: Image("HappyKey"), title: "You're All Set!", description: "Enjoy using the HappyKey keyboard anywhere you need math notation!")
     ]
     
@@ -99,6 +99,11 @@ struct OnboardingStepView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 30)
                 KeyboardTestView()
+            } else if index == 3 {
+                Image("KeyboardPop")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 150)
             } else if index == 4 {
                 Text("You may now exit the app.")
                     .font(.title3)
