@@ -112,6 +112,7 @@ struct OnboardingStepView: View {
                 TextField("Test it out here!", text: $keyboardTestText)
                     .multilineTextAlignment(.center)
                     .textFieldStyle(.roundedBorder)
+                    .font(.title)
                     .onChange(of: keyboardTestText) { newValue in
                         if newValue == exampleGoal {
                             keyboardTestFeedback = "Well done!"
