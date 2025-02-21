@@ -103,7 +103,7 @@ struct OnboardingStepView: View {
                 Image("KeyboardPop")
                     .resizable()
                     .scaledToFit()
-                    .frame(maxHeight: 150)
+                    .frame(maxHeight: 125)
             } else if index == 4 {
                 Text("You may now exit the app.")
                     .font(.title3)
