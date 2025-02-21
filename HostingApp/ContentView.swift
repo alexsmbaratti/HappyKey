@@ -15,7 +15,7 @@ struct ContentView: View {
         OnboardingStep(image: Image("HappyKey"), title: "Welcome to HappyKey", description: "Math notation just got simpler! Follow these steps to setup your keyboard."),
         OnboardingStep(image: Image(systemName: "gear"), title: "Enable HappyKey in Settings", description: "Open Settings, select Keyboards, and enable the HappyKey keyboard."),
         OnboardingStep(image: Image(systemName: "globe"), title: "Switch Keyboards", description: "In any text field, just tap on the globe icon to switch to the HappyKey keyboard. Tap the globe icon again to switch back when finished."),
-        OnboardingStep(image: Image(systemName: "keyboard"), title: "Try It Yourself", description: "Try typing \(exampleGoal)"),
+        OnboardingStep(image: Image(systemName: "keyboard"), title: "Try It Yourself", description: "Switch keyboards and type \(exampleGoal)"),
         OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and held. Superscripts and subscripts are available for numbers. The shift key in the bottom left corner will reveal more symbols."),
         OnboardingStep(image: Image("HappyKey"), title: "You're All Set!", description: "Enjoy using the HappyKey keyboard anywhere you need math notation!")
     ]
@@ -78,7 +78,7 @@ struct OnboardingStepView: View {
                 .foregroundStyle(index == 0 ? .white : .primary)
             
             Text(step.description)
-                .font(.title3)
+                .font(.body)
                 .foregroundStyle(index == 0 ? .white : .gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
@@ -86,7 +86,7 @@ struct OnboardingStepView: View {
             if index == 0 {
                 if keyboardIsIntalled() {
                     Text("It appears that the HappyKey keyboard is already setup. Use it anywhere by selecting it from the keyboard switcher. This app is just for setup.")
-                        .font(.title3)
+                        .font(.body)
                         .foregroundStyle(.white)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
@@ -105,7 +105,7 @@ struct OnboardingStepView: View {
                     .frame(maxHeight: 125)
             } else if index == 3 {
                 Text(keyboardTestFeedback)
-                    .font(.title3)
+                    .font(.body)
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 30)
@@ -121,7 +121,7 @@ struct OnboardingStepView: View {
                     }
             } else if index == steps.count - 1 {
                 Text("You may now exit the app.")
-                    .font(.title3)
+                    .font(.body)
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 30)
