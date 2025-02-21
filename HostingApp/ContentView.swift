@@ -16,8 +16,7 @@ struct ContentView: View {
         OnboardingStep(image: Image(systemName: "gear"), title: "Enable HappyKey in Settings", description: "Open Settings, select Keyboards, and enable the HappyKey keyboard."),
         OnboardingStep(image: Image(systemName: "globe"), title: "Switch Keyboards", description: "In any text field, just tap on the globe icon to switch to the HappyKey keyboard. Tap the globe icon again to switch back when finished."),
         OnboardingStep(image: Image(systemName: "keyboard"), title: "Try It Yourself", description: "Try typing \(exampleGoal)"),
-        OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and held. Superscripts and subscripts are available for numbers. Traditional multiplication and division symbols are also available."),
-        OnboardingStep(image: Image(systemName: "squareroot"), title: "Advanced Symbols", description: "Using the shift key in the bottom left corner, you can access additional symbols like square roots, degrees, and more."),
+        OnboardingStep(image: Image(systemName: "divide"), title: "Additional Symbols", description: "Some of the keys display additional symbols when tapped and held. Superscripts and subscripts are available for numbers. The shift key in the bottom left corner will reveal more symbols."),
         OnboardingStep(image: Image("HappyKey"), title: "You're All Set!", description: "Enjoy using the HappyKey keyboard anywhere you need math notation!")
     ]
     
