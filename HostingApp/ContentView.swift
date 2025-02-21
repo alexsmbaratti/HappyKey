@@ -163,6 +163,7 @@ struct KeyboardTestView: View {
         VStack {
             TextField("Test it out here!", text: $text)
                 .multilineTextAlignment(.center)
+                .textFieldStyle(.roundedBorder)
         }
     }
 }
