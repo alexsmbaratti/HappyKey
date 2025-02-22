@@ -146,11 +146,6 @@ struct OnboardingStepView: View {
                 )
             }
         }
-        .gesture(DragGesture().onEnded { value in
-            if value.translation.width < -50 { // Swipe left to next step
-                goToNextStep()
-            }
-        })
         .padding()
     }
     
@@ -159,10 +154,6 @@ struct OnboardingStepView: View {
         if index < steps.count - 1 {
             OnboardingStepView(step: steps[index + 1], steps: steps, index: index + 1)
         }
-    }
-    
-    private func goToNextStep() {
-        // Handle swipe navigation in NavigationStack
     }
     
     func keyboardIsIntalled() -> Bool {
@@ -176,3 +167,46 @@ struct OnboardingStepView: View {
 #Preview {
     ContentView()
 }
+
+#if DEBUG
+var screenshotConfig1 = OnboardingStep(image: Image(systemName: "questionmark.circle"), title: "Pop Quiz", description: "What is point-slope form?")
+var screenshotConfig2 = OnboardingStep(image: Image(systemName: "angle"), title: "Solve", description: "How many degrees are in a right triangle?")
+
+struct AppStoreScreenshotView: View {
+    let step: OnboardingStep
+    
+    @State var keyboardTestText = ""
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            
+            step.image
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .foregroundStyle(.blue)
+            
+            Text(step.title)
+                .font(.largeTitle)
+                .bold()
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.primary)
+            
+            Text(step.description)
+                .font(.body)
+                .foregroundStyle(.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
+ 
+            TextField("Type Here", text: $keyboardTestText)
+                .multilineTextAlignment(.center)
+                .textFieldStyle(.roundedBorder)
+                .font(.title)
+            
+            Spacer()
+        }
+        .padding()
+    }
+}
+#endif
