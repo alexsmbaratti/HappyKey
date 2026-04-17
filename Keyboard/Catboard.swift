@@ -37,23 +37,22 @@ class Catboard: KeyboardViewController {
         }
         
         if key.type == .character || key.type == .specialCharacter {
-            let context = textDocumentProxy.documentContextBeforeInput
-            if context != nil {
-                if context!.characters.count < 2 {
+            if let context = textDocumentProxy.documentContextBeforeInput {
+                if context.count < 2 {
                     InsertText(keyOutput)
                     return
                 }
                 
-                var index = context!.endIndex
+                var index = context.endIndex
               
-                index = context!.index( before: index )
-                if context?.characters[index] != " " {
+                index = context.index( before: index )
+                if context[index] != " " {
                     InsertText(keyOutput)
                     return
                 }
                 
-                index = context!.index(before: index)
-                if context?.characters[index] == " " {
+                index = context.index(before: index)
+                if context[index] == " " {
                     InsertText(keyOutput)
                     return
                 }

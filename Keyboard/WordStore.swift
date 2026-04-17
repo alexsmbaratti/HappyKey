@@ -140,7 +140,7 @@ class WordStore
 
     func DeleteBackward() {
         
-        if self.currentWord.characters.count > 0 {
+        if self.currentWord.count > 0 {
 
             self.currentWord.remove(at: self.currentWord.index(before: self.currentWord.endIndex))
         }
