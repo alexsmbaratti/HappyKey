@@ -55,6 +55,8 @@
 		FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD7852D659EDB0078916C /* ContentView.swift */; };
 		FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */; };
 		FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAA33FA32F91C28600D9A905 /* AppIcon.icon */; };
+		FAA33FA72F91DE3500D9A905 /* SeizosUI in Frameworks */ = {isa = PBXBuildFile; productRef = FAA33FA62F91DE3500D9A905 /* SeizosUI */; };
+		FAA33FC42F91E3D500D9A905 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA33FC32F91E3D500D9A905 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,7 @@
 		FA2AD7852D659EDB0078916C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA33FA32F91C28600D9A905 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		FAA33FC32F91E3D500D9A905 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			files = (
 				4E8EF39819F95D75009CBF5D /* KeyboardFramework.framework in Frameworks */,
+				FAA33FA72F91DE3500D9A905 /* SeizosUI in Frameworks */,
 			);
 		};
 		4E807DB619461DC700D875D1 /* Frameworks */ = {
@@ -296,6 +300,7 @@
 				4EF16F9319D255030076AFCB /* Images.xcassets */,
 				4E807D9619461D9000D875D1 /* Supporting Files */,
 				FA2AD7852D659EDB0078916C /* ContentView.swift */,
+				FAA33FC32F91E3D500D9A905 /* AboutView.swift */,
 				FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */,
 			);
 			path = HostingApp;
@@ -428,6 +433,9 @@
 				4E8EF39719F95D75009CBF5D /* PBXTargetDependency */,
 			);
 			name = HostingApp;
+			packageProductDependencies = (
+				FAA33FA62F91DE3500D9A905 /* SeizosUI */,
+			);
 			productName = TastyImitationKeyboard;
 			productReference = 4E807D9319461D9000D875D1 /* HostingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -547,6 +555,9 @@
 				Base,
 			);
 			mainGroup = 4E807D8A19461D9000D875D1;
+			packageReferences = (
+				FAA33FA52F91DE3500D9A905 /* XCRemoteSwiftPackageReference "seizos-kit" */,
+			);
 			preferredProjectObjectVersion = 100;
 			productRefGroup = 4E807D9419461D9000D875D1 /* Products */;
 			projectDirPath = "";
@@ -602,6 +613,7 @@
 		4E807D8F19461D9000D875D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
+				FAA33FC42F91E3D500D9A905 /* AboutView.swift in Sources */,
 				4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */,
 				4EF16F9819D255030076AFCB /* ViewController.swift in Sources */,
 				FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */,
@@ -1156,6 +1168,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAA33FA52F91DE3500D9A905 /* XCRemoteSwiftPackageReference "seizos-kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexsmbaratti/seizos-kit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAA33FA62F91DE3500D9A905 /* SeizosUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAA33FA52F91DE3500D9A905 /* XCRemoteSwiftPackageReference "seizos-kit" */;
+			productName = SeizosUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4E807D8B19461D9000D875D1 /* Project object */;
 }

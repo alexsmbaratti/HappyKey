@@ -6,11 +6,14 @@
 //  Copyright © 2025 Apple. All rights reserved.
 //
 
+import SeizosUI
 import SwiftUI
 
 var exampleGoal = "y=2x+5"
 
 struct ContentView: View {
+    @State private var isAboutViewPresented: Bool = false
+
     let steps = [
         OnboardingStep(
             image: Image("HappyKey"),
@@ -61,6 +64,28 @@ struct ContentView: View {
                         endPoint: .bottomTrailing
                     )
                 )
+                .sheet(isPresented: $isAboutViewPresented) {
+                    AboutView()
+                }
+                .toolbar(content: {
+                    ToolbarItem(
+                        placement: .topBarLeading,
+                        content: {
+                            Button(
+                                action: {
+                                    isAboutViewPresented = true
+                                },
+                                label: {
+                                    Label(
+                                        "about.title",
+                                        systemImage: "info.circle"
+                                    )
+                                }
+                            )
+                            .tint(.accentColor)
+                        }
+                    )
+                })
         }
     }
 }
