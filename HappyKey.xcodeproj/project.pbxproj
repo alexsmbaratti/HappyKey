@@ -54,6 +54,7 @@
 		82FD1A931B0B3D3800A6D23D /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */; };
 		FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD7852D659EDB0078916C /* ContentView.swift */; };
 		FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */; };
+		FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAA33FA32F91C28600D9A905 /* AppIcon.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,7 @@
 		82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		FA2AD7852D659EDB0078916C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAA33FA32F91C28600D9A905 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 		4E807D9519461D9000D875D1 /* HostingApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAA33FA32F91C28600D9A905 /* AppIcon.icon */,
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
 				4EF16F9519D255030076AFCB /* ViewController.swift */,
 				4EF16F9319D255030076AFCB /* Images.xcassets */,
@@ -583,6 +586,7 @@
 			files = (
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
 				FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */,
+				FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
