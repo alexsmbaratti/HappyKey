@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -105,25 +105,21 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		4E5B67C4196E07B300114361 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolder = Frameworks;
 			files = (
 				4E8EF39919F95D75009CBF5D /* KeyboardFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E807DC719461DC700D875D1 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolder = PlugIns;
 			files = (
 				4E807DC119461DC700D875D1 /* Keyboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -186,41 +182,31 @@
 /* Begin PBXFrameworksBuildPhase section */
 		4E807D9019461D9000D875D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4E8EF39819F95D75009CBF5D /* KeyboardFramework.framework in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E807DB619461DC700D875D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4E8EF3A019F95D93009CBF5D /* KeyboardFramework.framework in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E8EF37D19F95D74009CBF5D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		73D535101BE9CB1A00D61F2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				73D535181BE9CB1A00D61F2E /* KeyboardFramework.framework in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		73D535241BEC662700D61F2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -417,11 +403,9 @@
 /* Begin PBXHeadersBuildPhase section */
 		4E8EF37E19F95D74009CBF5D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4E8EF38619F95D75009CBF5D /* KeyboardFramework.h in Headers */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
@@ -476,8 +460,6 @@
 				4E8EF37F19F95D74009CBF5D /* Resources */,
 			);
 			buildRules = (
-			);
-			dependencies = (
 			);
 			name = KeyboardFramework;
 			productName = KeyboardFramework;
@@ -558,7 +540,6 @@
 				};
 			};
 			buildConfigurationList = 4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "HappyKey" */;
-			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -566,6 +547,7 @@
 				Base,
 			);
 			mainGroup = 4E807D8A19461D9000D875D1;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = 4E807D9419461D9000D875D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,17 +564,14 @@
 /* Begin PBXResourcesBuildPhase section */
 		4E807D9119461D9000D875D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
 				FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */,
 				FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E807DB719461DC700D875D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				73F0D3B51BEEB5E60032A0D7 /* LanguageDefinitions.json in Resources */,
 				736877CC1C6FDAC400234D95 /* QWERTZ.json in Resources */,
@@ -600,46 +579,36 @@
 				4E52A6D61A06BADA006A08CE /* Media.xcassets in Resources */,
 				736877CA1C6FD90B00234D95 /* QWERTY.json in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E8EF37F19F95D74009CBF5D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		73D535111BE9CB1A00D61F2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				736D00A71BEEEA04004E7C6B /* LanguageDefinitions.json in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		73D535251BEC662700D61F2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E807D8F19461D9000D875D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */,
 				4EF16F9819D255030076AFCB /* ViewController.swift in Sources */,
 				FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E807DB519461DC700D875D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				73F0D3B81BEEB98E0032A0D7 /* LanguageDefinition.swift in Sources */,
 				4E52A6D21A06A61F006A08CE /* ImageKey.swift in Sources */,
@@ -669,31 +638,24 @@
 				82FD1A871B0B319100A6D23D /* CYRKeyboardButtonView.m in Sources */,
 				82FD1A8A1B0B31A300A6D23D /* TurtleBezierPath.m in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E8EF37C19F95D74009CBF5D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		73D5350F1BE9CB1A00D61F2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				736D00A81BEEEDB8004E7C6B /* LanguageDefinition.swift in Sources */,
 				73D535201BE9CD6100D61F2E /* Utilities.swift in Sources */,
 				73D535221BEC636A00D61F2E /* KeyboardFrameworkTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		73D535231BEC662700D61F2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -731,7 +693,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4E807DAD19461D9000D875D1 /* Debug */ = {
+		4E807DAD19461D9000D875D1 /* Debug configuration for PBXProject "HappyKey" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -786,7 +748,7 @@
 			};
 			name = Debug;
 		};
-		4E807DAE19461D9000D875D1 /* Release */ = {
+		4E807DAE19461D9000D875D1 /* Release configuration for PBXProject "HappyKey" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -836,7 +798,7 @@
 			};
 			name = Release;
 		};
-		4E807DB019461D9000D875D1 /* Debug */ = {
+		4E807DB019461D9000D875D1 /* Debug configuration for PBXNativeTarget "HostingApp" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -866,7 +828,7 @@
 			};
 			name = Debug;
 		};
-		4E807DB119461D9000D875D1 /* Release */ = {
+		4E807DB119461D9000D875D1 /* Release configuration for PBXNativeTarget "HostingApp" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -895,7 +857,7 @@
 			};
 			name = Release;
 		};
-		4E807DC519461DC700D875D1 /* Debug */ = {
+		4E807DC519461DC700D875D1 /* Debug configuration for PBXNativeTarget "Keyboard" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -929,7 +891,7 @@
 			};
 			name = Debug;
 		};
-		4E807DC619461DC700D875D1 /* Release */ = {
+		4E807DC619461DC700D875D1 /* Release configuration for PBXNativeTarget "Keyboard" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -961,7 +923,7 @@
 			};
 			name = Release;
 		};
-		4E8EF39B19F95D75009CBF5D /* Debug */ = {
+		4E8EF39B19F95D75009CBF5D /* Debug configuration for PBXNativeTarget "KeyboardFramework" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1000,7 +962,7 @@
 			};
 			name = Debug;
 		};
-		4E8EF39C19F95D75009CBF5D /* Release */ = {
+		4E8EF39C19F95D75009CBF5D /* Release configuration for PBXNativeTarget "KeyboardFramework" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -1033,7 +995,7 @@
 			};
 			name = Release;
 		};
-		73D5351B1BE9CB1A00D61F2E /* Debug */ = {
+		73D5351B1BE9CB1A00D61F2E /* Debug configuration for PBXNativeTarget "KeyboardFrameworkTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1060,7 +1022,7 @@
 			};
 			name = Debug;
 		};
-		73D5351C1BE9CB1A00D61F2E /* Release */ = {
+		73D5351C1BE9CB1A00D61F2E /* Release configuration for PBXNativeTarget "KeyboardFrameworkTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -1086,7 +1048,7 @@
 			};
 			name = Release;
 		};
-		73D5352F1BEC662800D61F2E /* Debug */ = {
+		73D5352F1BEC662800D61F2E /* Debug configuration for PBXNativeTarget "HostingAppUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_ENTITLEMENTS[sdk=iphonesimulator*]" = "";
@@ -1115,7 +1077,7 @@
 			};
 			name = Debug;
 		};
-		73D535301BEC662800D61F2E /* Release */ = {
+		73D535301BEC662800D61F2E /* Release configuration for PBXNativeTarget "HostingAppUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_ENTITLEMENTS[sdk=iphonesimulator*]" = "";
@@ -1150,55 +1112,49 @@
 		4E807D8E19461D9000D875D1 /* Build configuration list for PBXProject "HappyKey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E807DAD19461D9000D875D1 /* Debug */,
-				4E807DAE19461D9000D875D1 /* Release */,
+				4E807DAD19461D9000D875D1 /* Debug configuration for PBXProject "HappyKey" */,
+				4E807DAE19461D9000D875D1 /* Release configuration for PBXProject "HappyKey" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		4E807DAF19461D9000D875D1 /* Build configuration list for PBXNativeTarget "HostingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E807DB019461D9000D875D1 /* Debug */,
-				4E807DB119461D9000D875D1 /* Release */,
+				4E807DB019461D9000D875D1 /* Debug configuration for PBXNativeTarget "HostingApp" */,
+				4E807DB119461D9000D875D1 /* Release configuration for PBXNativeTarget "HostingApp" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		4E807DC419461DC700D875D1 /* Build configuration list for PBXNativeTarget "Keyboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E807DC519461DC700D875D1 /* Debug */,
-				4E807DC619461DC700D875D1 /* Release */,
+				4E807DC519461DC700D875D1 /* Debug configuration for PBXNativeTarget "Keyboard" */,
+				4E807DC619461DC700D875D1 /* Release configuration for PBXNativeTarget "Keyboard" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		4E8EF39A19F95D75009CBF5D /* Build configuration list for PBXNativeTarget "KeyboardFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E8EF39B19F95D75009CBF5D /* Debug */,
-				4E8EF39C19F95D75009CBF5D /* Release */,
+				4E8EF39B19F95D75009CBF5D /* Debug configuration for PBXNativeTarget "KeyboardFramework" */,
+				4E8EF39C19F95D75009CBF5D /* Release configuration for PBXNativeTarget "KeyboardFramework" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		73D5351D1BE9CB1A00D61F2E /* Build configuration list for PBXNativeTarget "KeyboardFrameworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73D5351B1BE9CB1A00D61F2E /* Debug */,
-				73D5351C1BE9CB1A00D61F2E /* Release */,
+				73D5351B1BE9CB1A00D61F2E /* Debug configuration for PBXNativeTarget "KeyboardFrameworkTests" */,
+				73D5351C1BE9CB1A00D61F2E /* Release configuration for PBXNativeTarget "KeyboardFrameworkTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		73D5352E1BEC662800D61F2E /* Build configuration list for PBXNativeTarget "HostingAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73D5352F1BEC662800D61F2E /* Debug */,
-				73D535301BEC662800D61F2E /* Release */,
+				73D5352F1BEC662800D61F2E /* Debug configuration for PBXNativeTarget "HostingAppUITests" */,
+				73D535301BEC662800D61F2E /* Release configuration for PBXNativeTarget "HostingAppUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
