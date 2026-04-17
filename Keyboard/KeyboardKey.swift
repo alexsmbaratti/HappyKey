@@ -417,7 +417,7 @@ class KeyboardKey: UIControl {
         }
     }
     
-    func hidePopup() {
+    @objc func hidePopup() {
         if self.popup != nil {
             self.delegate?.willHidePopup(self)
             
