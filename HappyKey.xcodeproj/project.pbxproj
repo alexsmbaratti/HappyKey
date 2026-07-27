@@ -53,6 +53,7 @@
 		82FD1A911B0B3C8D00A6D23D /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A901B0B3C8D00A6D23D /* DefaultKeyboard.swift */; };
 		82FD1A931B0B3D3800A6D23D /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */; };
 		FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD7852D659EDB0078916C /* ContentView.swift */; };
+		D4BE092433E7E6CBE746B734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */; };
 		FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */; };
 		FA8C55C330170D9200F39A4C /* SeizosKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA8C55C230170D9200F39A4C /* SeizosKit */; };
 		FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAA33FA32F91C28600D9A905 /* AppIcon.icon */; };
@@ -177,6 +178,7 @@
 		82FD1A901B0B3C8D00A6D23D /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
 		82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		FA2AD7852D659EDB0078916C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA33FA32F91C28600D9A905 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		FAA33FC32F91E3D500D9A905 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				FAA33FA32F91C28600D9A905 /* AppIcon.icon */,
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
+				55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */,
 				4EF16F9519D255030076AFCB /* ViewController.swift */,
 				4EF16F9319D255030076AFCB /* Images.xcassets */,
 				4E807D9619461D9000D875D1 /* Supporting Files */,
@@ -615,6 +618,7 @@
 			files = (
 				FAA33FC42F91E3D500D9A905 /* AboutView.swift in Sources */,
 				4EF16F9B19D2550D0076AFCB /* AppDelegate.swift in Sources */,
+				D4BE092433E7E6CBE746B734 /* SceneDelegate.swift in Sources */,
 				4EF16F9819D255030076AFCB /* ViewController.swift in Sources */,
 				FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */,
 			);
