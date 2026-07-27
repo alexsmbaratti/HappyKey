@@ -6,7 +6,7 @@
 //  Copyright © 2026 Apple. All rights reserved.
 //
 
-import SeizosUI
+import SeizosKit
 import SwiftUI
 
 struct AboutView: View {
@@ -30,7 +30,7 @@ struct AboutView: View {
         ),
     ]
     let dependencyCredits = [
-        DependencyCredit(
+        AttributionCredit(
             name: "TastyImitationKeyboard",
             description: """
             Provides framework for keyboard.
@@ -80,7 +80,7 @@ struct AboutView: View {
                     credits: credits
                 )
 
-                DependencyCreditsSection(
+                AttributionCreditsSection(
                     credits: dependencyCredits
                 )
             }

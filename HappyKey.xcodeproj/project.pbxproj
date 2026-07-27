@@ -54,8 +54,8 @@
 		82FD1A931B0B3D3800A6D23D /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */; };
 		FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD7852D659EDB0078916C /* ContentView.swift */; };
 		FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */; };
+		FA8C55C330170D9200F39A4C /* SeizosKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA8C55C230170D9200F39A4C /* SeizosKit */; };
 		FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAA33FA32F91C28600D9A905 /* AppIcon.icon */; };
-		FAA33FA72F91DE3500D9A905 /* SeizosUI in Frameworks */ = {isa = PBXBuildFile; productRef = FAA33FA62F91DE3500D9A905 /* SeizosUI */; };
 		FAA33FC42F91E3D500D9A905 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA33FC32F91E3D500D9A905 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
@@ -186,8 +186,8 @@
 		4E807D9019461D9000D875D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				FA8C55C330170D9200F39A4C /* SeizosKit in Frameworks */,
 				4E8EF39819F95D75009CBF5D /* KeyboardFramework.framework in Frameworks */,
-				FAA33FA72F91DE3500D9A905 /* SeizosUI in Frameworks */,
 			);
 		};
 		4E807DB619461DC700D875D1 /* Frameworks */ = {
@@ -434,7 +434,7 @@
 			);
 			name = HostingApp;
 			packageProductDependencies = (
-				FAA33FA62F91DE3500D9A905 /* SeizosUI */,
+				FA8C55C230170D9200F39A4C /* SeizosKit */,
 			);
 			productName = TastyImitationKeyboard;
 			productReference = 4E807D9319461D9000D875D1 /* HostingApp.app */;
@@ -556,7 +556,7 @@
 			);
 			mainGroup = 4E807D8A19461D9000D875D1;
 			packageReferences = (
-				FAA33FA52F91DE3500D9A905 /* XCRemoteSwiftPackageReference "seizos-kit" */,
+				FA8C55C130170D9200F39A4C /* XCRemoteSwiftPackageReference "seizos-kit" */,
 			);
 			preferredProjectObjectVersion = 100;
 			productRefGroup = 4E807D9419461D9000D875D1 /* Products */;
@@ -1172,21 +1172,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FAA33FA52F91DE3500D9A905 /* XCRemoteSwiftPackageReference "seizos-kit" */ = {
+		FA8C55C130170D9200F39A4C /* XCRemoteSwiftPackageReference "seizos-kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexsmbaratti/seizos-kit";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FAA33FA62F91DE3500D9A905 /* SeizosUI */ = {
+		FA8C55C230170D9200F39A4C /* SeizosKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAA33FA52F91DE3500D9A905 /* XCRemoteSwiftPackageReference "seizos-kit" */;
-			productName = SeizosUI;
+			package = FA8C55C130170D9200F39A4C /* XCRemoteSwiftPackageReference "seizos-kit" */;
+			productName = SeizosKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

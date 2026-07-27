@@ -6,7 +6,7 @@
 //  Copyright © 2025 Apple. All rights reserved.
 //
 
-import SeizosUI
+import SeizosKit
 import SwiftUI
 
 var exampleGoal = "y=2x+5"
