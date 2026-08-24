@@ -52,8 +52,8 @@
 		82FD1A8A1B0B31A300A6D23D /* TurtleBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A891B0B31A300A6D23D /* TurtleBezierPath.m */; };
 		82FD1A911B0B3C8D00A6D23D /* DefaultKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A901B0B3C8D00A6D23D /* DefaultKeyboard.swift */; };
 		82FD1A931B0B3D3800A6D23D /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */; };
-		FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD7852D659EDB0078916C /* ContentView.swift */; };
 		D4BE092433E7E6CBE746B734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */; };
+		FA2AD7862D659EDB0078916C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD7852D659EDB0078916C /* ContentView.swift */; };
 		FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */; };
 		FA8C55C330170D9200F39A4C /* SeizosKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA8C55C230170D9200F39A4C /* SeizosKit */; };
 		FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAA33FA32F91C28600D9A905 /* AppIcon.icon */; };
@@ -61,7 +61,7 @@
 		FAC8FCB1303C0C3E00A6C10B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8FCB0303C0C3E00A6C10B /* SettingsView.swift */; };
 		FAC8FCB3303C0E1F00A6C10B /* AppIcon-BajaSunset.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAC8FCB2303C0E1F00A6C10B /* AppIcon-BajaSunset.icon */; };
 		FAC8FCB5303C0F4400A6C10B /* AppIcon-Pi.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAC8FCB4303C0F4400A6C10B /* AppIcon-Pi.icon */; };
-		FAC8FCB7303C1ACC00A6C10B /* AppIconImage-GreenGold.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAC8FCB6303C1ACC00A6C10B /* AppIconImage-GreenGold.icon */; };
+		FAC8FCB7303C1ACC00A6C10B /* AppIcon-GreenGold.icon in Resources */ = {isa = PBXBuildFile; fileRef = FAC8FCB6303C1ACC00A6C10B /* AppIcon-GreenGold.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +156,7 @@
 		4EF16F9319D255030076AFCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4EF16F9519D255030076AFCB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		73240ABB1C338A63007CA329 /* KeyboardLayoutSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutSelection.swift; sourceTree = "<group>"; };
 		73240B431C387502007CA329 /* LanguageSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSettingsViewController.swift; sourceTree = "<group>"; };
 		73240B471C3889AE007CA329 /* KeyboardSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardSelectionViewController.swift; sourceTree = "<group>"; };
@@ -182,14 +183,13 @@
 		82FD1A901B0B3C8D00A6D23D /* DefaultKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKeyboard.swift; sourceTree = "<group>"; };
 		82FD1A921B0B3D3800A6D23D /* KeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		FA2AD7852D659EDB0078916C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA2AD7C52D6A5F4C0078916C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA33FA32F91C28600D9A905 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		FAA33FC32F91E3D500D9A905 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		FAC8FCB0303C0C3E00A6C10B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FAC8FCB2303C0E1F00A6C10B /* AppIcon-BajaSunset.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "AppIcon-BajaSunset.icon"; sourceTree = "<group>"; };
 		FAC8FCB4303C0F4400A6C10B /* AppIcon-Pi.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "AppIcon-Pi.icon"; sourceTree = "<group>"; };
-		FAC8FCB6303C1ACC00A6C10B /* AppIconImage-GreenGold.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "AppIconImage-GreenGold.icon"; sourceTree = "<group>"; };
+		FAC8FCB6303C1ACC00A6C10B /* AppIcon-GreenGold.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "AppIcon-GreenGold.icon"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +307,7 @@
 				FAA33FA32F91C28600D9A905 /* AppIcon.icon */,
 				FAC8FCB2303C0E1F00A6C10B /* AppIcon-BajaSunset.icon */,
 				FAC8FCB4303C0F4400A6C10B /* AppIcon-Pi.icon */,
-				FAC8FCB6303C1ACC00A6C10B /* AppIconImage-GreenGold.icon */,
+				FAC8FCB6303C1ACC00A6C10B /* AppIcon-GreenGold.icon */,
 				4EF16F9A19D2550D0076AFCB /* AppDelegate.swift */,
 				55AB3668E8E18EA2BA03A863 /* SceneDelegate.swift */,
 				4EF16F9519D255030076AFCB /* ViewController.swift */,
@@ -594,7 +594,7 @@
 				4EF16F9619D255030076AFCB /* Images.xcassets in Resources */,
 				FAC8FCB3303C0E1F00A6C10B /* AppIcon-BajaSunset.icon in Resources */,
 				FA2AD7C62D6A5F4C0078916C /* LaunchScreen.storyboard in Resources */,
-				FAC8FCB7303C1ACC00A6C10B /* AppIconImage-GreenGold.icon in Resources */,
+				FAC8FCB7303C1ACC00A6C10B /* AppIcon-GreenGold.icon in Resources */,
 				FAC8FCB5303C0F4400A6C10B /* AppIcon-Pi.icon in Resources */,
 				FAA33FA42F91C28600D9A905 /* AppIcon.icon in Resources */,
 			);
