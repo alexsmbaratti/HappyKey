@@ -65,7 +65,7 @@ struct ContentView: View {
                     )
                 )
                 .sheet(isPresented: $isAboutViewPresented) {
-                    AboutView()
+                    SettingsView()
                 }
                 .toolbar(content: {
                     ToolbarItem(
@@ -77,8 +77,8 @@ struct ContentView: View {
                                 },
                                 label: {
                                     Label(
-                                        "about.title",
-                                        systemImage: "info.circle"
+                                        "Settings",
+                                        systemImage: "gear"
                                     )
                                 }
                             )
