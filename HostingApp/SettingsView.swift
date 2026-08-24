@@ -36,6 +36,11 @@ struct SettingsView: View {
                                         displayName: "Baja Sunset",
                                         preview: Image("AppIconImage-BajaSunset")
                                     ),
+                                    AppIconOption(
+                                        id: "AppIcon-GreenGold",
+                                        displayName: "Green & Gold",
+                                        preview: Image("AppIconImage-GreenGold")
+                                    ),
                                 ]
                             )
                             .navigationTitle("App Icon")
