@@ -51,17 +51,13 @@ struct SettingsView: View {
                 #endif
 
                 Section {
-                    NavigationLink(destination: AboutView()) {
-                        Label("About", systemImage: "info.circle")
-                    }
-                    Link(
-                        destination: URL(
+                    AboutLink(destination: AboutView())
+                    PrivacyPolicyLink(
+                        url: URL(
                             string:
                                 "https://alexsmbaratti.com/happykey/privacy-policy/"
                         )!
-                    ) {
-                        Label("Privacy Policy", systemImage: "hand.raised")
-                    }
+                    )
                 }
             }
             .navigationTitle("Settings")
