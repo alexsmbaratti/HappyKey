@@ -6,7 +6,7 @@
 //  Copyright © 2025 Apple. All rights reserved.
 //
 
-import SeizosUI
+import SeizosKit
 import SwiftUI
 
 var exampleGoal = "y=2x+5"
@@ -65,7 +65,7 @@ struct ContentView: View {
                     )
                 )
                 .sheet(isPresented: $isAboutViewPresented) {
-                    AboutView()
+                    SettingsView()
                 }
                 .toolbar(content: {
                     ToolbarItem(
@@ -77,8 +77,8 @@ struct ContentView: View {
                                 },
                                 label: {
                                     Label(
-                                        "about.title",
-                                        systemImage: "info.circle"
+                                        "Settings",
+                                        systemImage: "gear"
                                     )
                                 }
                             )

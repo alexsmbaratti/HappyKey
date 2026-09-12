@@ -6,12 +6,10 @@
 //  Copyright © 2026 Apple. All rights reserved.
 //
 
-import SeizosUI
+import SeizosKit
 import SwiftUI
 
 struct AboutView: View {
-    @Environment(\.dismiss) private var dismiss
-    
     let version =
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
@@ -30,7 +28,7 @@ struct AboutView: View {
         ),
     ]
     let dependencyCredits = [
-        DependencyCredit(
+        AttributionCredit(
             name: "TastyImitationKeyboard",
             description: """
             Provides framework for keyboard.
@@ -80,26 +78,11 @@ struct AboutView: View {
                     credits: credits
                 )
 
-                DependencyCreditsSection(
+                AttributionCreditsSection(
                     credits: dependencyCredits
                 )
             }
             .navigationTitle("About")
-            .toolbar {
-                ToolbarItem(
-                    placement: .navigationBarTrailing,
-                    content: {
-                        Button(
-                            action: {
-                                dismiss()
-                            },
-                            label: {
-                                Text("Done")
-                            }
-                        )
-                    }
-                )
-            }
         }
     }
 }
