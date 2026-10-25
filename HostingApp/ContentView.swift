@@ -107,6 +107,19 @@ struct OnboardingStepView: View {
     @State private var rotationAngle: Double = 0
 
     var body: some View {
+        // Scrolls when the content is taller than the window (such as a horizontal iPhone Duo), and keeps the
+        // spacers centering the content when there is room. The width cap keeps text readable on wide screens.
+        GeometryReader { geometry in
+            ScrollView {
+                content
+                    .frame(maxWidth: 600)
+                    .frame(maxWidth: .infinity, minHeight: geometry.size.height)
+            }
+            .scrollBounceBehavior(.basedOnSize)
+        }
+    }
+
+    private var content: some View {
         VStack(spacing: 20) {
             Spacer()
 
