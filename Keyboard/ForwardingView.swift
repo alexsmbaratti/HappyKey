@@ -101,7 +101,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
 			
 			isLongPressKeyPress = true
 			
-			if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+			if self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad
 			{
                 (view as? KeyboardKey)?.isHighlighted = false
 			}
@@ -247,7 +247,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
 				NotificationCenter.default.post(name: Notification.Name(rawValue: "hideExpandViewNotification"), object: nil)
 				isLongPressEnable = false
 				
-				if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+				if self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad
 				{
                     (view as? KeyboardKey)?.isHighlighted = false
 				}
@@ -335,7 +335,7 @@ class ForwardingView: UIView, UIGestureRecognizerDelegate {
                     
                     isLongPressKeyPress = false
                     
-                    if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+                    if self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad
                     {
                         (view as? KeyboardKey)?.isHighlighted = false
                     }

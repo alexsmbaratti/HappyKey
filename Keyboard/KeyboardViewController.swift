@@ -106,6 +106,10 @@ class KeyboardViewController: UIInputViewController {
     // Since UIApplication.sharedApplication().statusBarOrientation has been deprecated.
     // For now assume interfaceOrientation and device orientation are the same thing.
     // Couldn't get UIDevice.currentDevice().orientation to work even if I wrapped with begin/endGeneratingDeviceOrientationNotifications
+    // TODO: Modernization - UIScreen.main.bounds is the whole display, not this keyboard's scene, so on a foldable
+    // or resizable scene this can disagree with the real orientation. It is also called before super.init, where no
+    // view or trait collection exists. Move the initial currentInterfaceOrientation to viewIsAppearing (using
+    // view.bounds or size classes) and change heightForOrientation to take its inputs from there.
     @objc class func getInterfaceOrientation() -> UIInterfaceOrientation
     {
         let screenSize : CGSize = UIScreen.main.bounds.size
@@ -415,6 +419,10 @@ class KeyboardViewController: UIInputViewController {
 
 	}
 
+    // TODO: Modernization - The keyboard height is keyed off UIInterfaceOrientation and UIScreen.main.nativeBounds,
+    // which assume a fixed display and a portrait/landscape split. On a foldable, derive the height from the
+    // available space (view.window.windowScene.screen for nativeBounds, and size classes or view.bounds instead of
+    // orientation), and update the Objective-C callers of this @objc method together.
     @objc func heightForOrientation(_ orientation: UIInterfaceOrientation, withTopBanner: Bool) -> CGFloat {
 
         let actualScreenWidth = (UIScreen.main.nativeBounds.size.width /
@@ -474,7 +482,7 @@ class KeyboardViewController: UIInputViewController {
                         }
                         
                         if key.isCharacter {
-                            if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.pad {
+                            if self.traitCollection.userInterfaceIdiom != UIUserInterfaceIdiom.pad {
                                 keyView.addTarget(self, action: #selector(KeyboardViewController.showPopup(_:)), for: [.touchDown, .touchDragInside, .touchDragEnter])
 
 
@@ -1061,6 +1069,9 @@ class KeyboardViewController: UIInputViewController {
         }
     }
 	
+	// TODO: Modernization - This class func maps UIScreen.main.bounds heights (480/568/667/736) to fixed iPhone
+	// models, which cannot describe a foldable or a resizable scene. Replace the device-type buckets with values
+	// derived from the available space (view.bounds or size classes), then drop the class func and its callers.
 	class func getDeviceType()->TTDeviceType
 	{
         var height = UIScreen.main.bounds.size.height

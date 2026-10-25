@@ -53,6 +53,10 @@
 
 - (instancetype)initWithKeyboardButton:(CYRKeyboardButton *)button type:(CYRKeyboardButtonViewType)type topRow:(BOOL)isTopRow;
 {
+    // TODO: Modernization - UIScreen.mainScreen.bounds and the UIDevice orientation check size this overlay from the
+    // whole display, which does not match the keyboard's scene on a foldable or resizable window. Pass the bounds
+    // in from the caller (for example the keyboard view's window bounds), size the overlay with autoresizing or
+    // Auto Layout instead of a hand-swapped width/height, and update the callers of this initializer.
     CGRect frame = [UIScreen mainScreen].bounds;
 	
     _topRow = isTopRow;
@@ -238,7 +242,7 @@
         CGFloat shadowAlpha = 0;
         CGSize shadowOffset;
         
-        switch ([UIDevice currentDevice].userInterfaceIdiom) {
+        switch (self.traitCollection.userInterfaceIdiom) {
             case UIUserInterfaceIdiomPhone:
                 shadowAlpha = 0.5;
                 shadowOffset = CGSizeMake(0, 0.5);
@@ -798,6 +802,9 @@
     self.inputOptionRects = inputOptionRects;
 }
 
+// TODO: Modernization - This compares UIScreen.mainScreen.bounds, which is the whole display and not this view's
+// space. It has no callers today, so delete it, or if one is added, compare self.window.bounds (the keyboard view's
+// own bounds are wide and short in portrait too, so they cannot answer this).
 -(BOOL)isLandScapeOrientation
 {
     return [[UIScreen mainScreen] bounds].size.width > [[UIScreen mainScreen] bounds].size.height;

@@ -121,10 +121,15 @@ class LayoutConstants: NSObject {
         return self.findThreshhold(self.lastRowKeyGapLandscapeArray, threshholds: self.lastRowKeyGapLandscapeWidthThreshholds, measurement: width)
     }
     
+    // TODO: Modernization - This class func reads the device idiom from UIDevice.current, which does not
+    // follow the scene the keyboard renders in. Add a `traitCollection: UITraitCollection` overload that reads
+    // traitCollection.userInterfaceIdiom, deprecate this one, and update the Objective-C callers to pass their own.
     @objc class func keyboardIsShrunk(_ width: CGFloat) -> Bool {
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         return (isPad ? false : width >= self.keyboardShrunkSizeBaseWidthThreshhold)
     }
+    // TODO: Modernization - Same as keyboardIsShrunk(_:): UIDevice.current does not follow the keyboard's scene.
+    // Add a `traitCollection: UITraitCollection` overload, deprecate this one, and update the callers.
     @objc class func keyboardShrunkSize(_ width: CGFloat) -> CGFloat {
         let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         if isPad {
@@ -442,7 +447,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
         Key.KeyType.specialCharacter,
         Key.KeyType.period:
             key.color = GlobalColors.regularKey(darkMode)
-            if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+            if self.superview.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
                 key.downColor = GlobalColors.specialKey(darkMode)
             }
             else {
@@ -609,6 +614,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     // LAYOUT FUNCTIONS //
     //////////////////////
     
+    // TODO: Modernization - UIScreen.main assumes a single display scale. Add a `traitCollection: UITraitCollection`
+    // overload that uses traitCollection.displayScale (callers can pass self.superview.traitCollection), deprecate
+    // this method, and update the callers, including Objective-C ones, to use the new overload.
     @objc func rounded(_ measurement: CGFloat) -> CGFloat {
         return round(measurement * UIScreen.main.scale) / UIScreen.main.scale
     }
@@ -848,6 +856,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
     // END LAYOUT //
     ////////////////
     
+    // TODO: Modernization - UIScreen.main.nativeBounds/nativeScale assume a single, fixed display, which is not true
+    // on a foldable or resizable scene. Read the screen from key.window?.windowScene?.screen once the window is
+    // guaranteed (nativeBounds has no trait collection equivalent), or key the popup height off key.bounds/superview.bounds.
     func frameForPopup(_ key: KeyboardKey, direction: Direction) -> CGRect {
         let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
         let totalHeight = self.layoutConstants.popupTotalHeight(actualScreenWidth)

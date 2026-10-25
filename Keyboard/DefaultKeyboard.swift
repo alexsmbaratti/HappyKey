@@ -149,6 +149,10 @@ func addSymbolsPage(_ defaultKeyboard: Keyboard)
     
 }
 
+// TODO: Modernization - This free function checks UIDevice and UIScreen.main.nativeBounds (2436 = iPhone X-class
+// notch) to decide whether the next-keyboard key is shown. Neither follows the active scene, and a hard-coded
+// device height will not match a foldable such as iPhone Duo. Pass in a traitCollection or a flag from the
+// caller (KeyboardViewController) that decides whether the system already provides a globe key.
 func addDefaultBottomRowKeys(_ defaultKeyboard: Keyboard, modeChange: Key, pageNumber: Int)
 {
     defaultKeyboard.addKey(modeChange, row: 3, page: pageNumber)

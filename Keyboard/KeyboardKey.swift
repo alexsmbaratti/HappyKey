@@ -65,7 +65,7 @@ class KeyboardKey: UIControl {
         didSet {
             for view in [self.displayView, self.borderView, self.underView] {
                 view?.layer.shouldRasterize = shouldRasterize
-                view?.layer.rasterizationScale = UIScreen.main.scale
+                view?.layer.rasterizationScale = self.traitCollection.displayScale
             }
         }
     }
@@ -157,6 +157,13 @@ class KeyboardKey: UIControl {
         self.background.addSubview(self.label)
         
         setupViews()
+        
+        // rasterizationScale is stored on the layers, so refresh it when the display scale changes
+        registerForTraitChanges([UITraitDisplayScale.self]) { (self: KeyboardKey, previousTraitCollection) in
+            for view in [self.displayView, self.borderView, self.underView] {
+                view?.layer.rasterizationScale = self.traitCollection.displayScale
+            }
+        }
     }
     
     fileprivate func setupViews() {

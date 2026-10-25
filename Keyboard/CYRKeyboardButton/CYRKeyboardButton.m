@@ -64,18 +64,9 @@ NSString *const CYRKeyboardButtonKeyPressedKey = @"CYRKeyboardButtonKeyPressedKe
 {
     self = [super initWithFrame:frame];
     if (self) {
-        switch ([UIDevice currentDevice].userInterfaceIdiom) {
-            case UIUserInterfaceIdiomPhone:
-                _style = CYRKeyboardButtonStylePhone;
-                break;
-                
-            case UIUserInterfaceIdiomPad:
-                _style = CYRKeyboardButtonStyleTablet;
-                break;
-                
-            default:
-                break;
-        }
+        // The idiom trait is unspecified until the button is in a window, so the style starts at its default
+        // (phone) and is set from the trait whenever it changes.
+        [self registerForTraitChanges:@[UITraitUserInterfaceIdiom.class] withAction:@selector(updateStyleForIdiom)];
         
         // Default appearance
         _font = [UIFont systemFontOfSize:22.f];
@@ -125,6 +116,22 @@ NSString *const CYRKeyboardButtonKeyPressedKey = @"CYRKeyboardButtonKeyPressedKe
     [self setNeedsDisplay];
     
     [self updateButtonPosition];
+}
+
+- (void)updateStyleForIdiom
+{
+    switch (self.traitCollection.userInterfaceIdiom) {
+        case UIUserInterfaceIdiomPhone:
+            self.style = CYRKeyboardButtonStylePhone;
+            break;
+            
+        case UIUserInterfaceIdiomPad:
+            self.style = CYRKeyboardButtonStyleTablet;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark - UIGestureRecognizerDelegate
