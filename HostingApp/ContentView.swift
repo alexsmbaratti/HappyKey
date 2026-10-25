@@ -148,12 +148,15 @@ struct OnboardingStepView: View {
                 .bold()
                 .multilineTextAlignment(.center)
                 .foregroundStyle(index == 0 ? .white : .primary)
+                .fixedSize(horizontal: false, vertical: true)
 
             Text(step.description)
                 .font(.body)
                 .foregroundStyle(index == 0 ? .white : .gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
+                // Always take the full height the text needs, so a long description is never truncated
+                .fixedSize(horizontal: false, vertical: true)
 
             if index == 0 {
                 if keyboardIsIntalled() {
