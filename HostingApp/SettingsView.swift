@@ -22,7 +22,8 @@ struct SettingsView: View {
                                 options: [
                                     AppIconOption(
                                         id: nil,
-                                        displayName: "Default",
+                                        displayName: "HappyKey",
+                                        description: "Default",
                                         preview: Image("AppIconImage")
                                     ),
                                     AppIconOption(
